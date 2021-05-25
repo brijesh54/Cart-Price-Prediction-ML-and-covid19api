@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/search.css' %}">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="{% static 'jquery-1.10.2.min.js' %}"></script>
+    <title>One UI Color</title>
+</head>
+
+<body>
+    <main>
+        <div class="nav-container">
+            <nav>
+                <a class="logoimg" href="#">
+                    <img src="{% static 'vr_car.jpg' %}" alt="img">
+                </a>
+                <div class="wrapper">
+                    <div class="navbar">
+                        <div class="right">
+                            <ul>
+                                <li>
+                                    <a>
+                                        <p>{{request.user}}</p><img src="{% static 'img/Profile.png' %}" alt="Admin"
+                                            width="40"><i class="fas fa-angle-down"></i>
+                                    </a>
+
+                                    <div class="dropdown">
+                                        <ul>
+                                            <li><a href="#" onclick="popupToggle();"><i class="fas fa-user"></i>
+                                                    Profile</a></li>
+                                            <form action="{% url 'logout'%}" method="POST">
+                                                {% csrf_token %}
+                                                <li><input type="submit" value="Signout" class="fas fa-sign-out-alt">
+                                                </li>
+                                            </form>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                        list-style: none;
+                        text-decoration: none;
+                        font-family: 'Josefin Sans', sans-serif;
+                    }
+
+                    .logoimg img {
+                        width: 130px;
+                        height: 100px;
+                        margin-left: -120px;
+                    }
+
+                    nav {
+                        padding: 1rem 0rem
+                    }
+
+                    .dropdown ul {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .wrapper {
+                        position: absolute;
+                        top: 30%;
+                        right: 10%;
+                        /* transform: translate(-50%, -50%); */
+                        z-index: 100;
+                    }
+
+                    .wrapper .navbar {
+                        width: 160px;
+                        background: #fff;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                    }
+
+                    .wrapper .navbar ul li a {
+                        color: #644def;
+                    }
+
+                    .wrapper .navbar .left ul,
+                    .wrapper .navbar .right ul li a {
+                        display: flex;
+                        align-items: center;
+                        height: 40px;
+                    }
+
+                    .wrapper .navbar .left ul li,
+                    .wrapper .navbar .right img {
+                        margin: 0 10px;
+                    }
+
+                    .wrapper .navbar .right a {
+                        text-align: right;
+                    }
+
+                    .wrapper .navbar .right a span {
+                        font-size: 10px;
+                    }
+
+                    .wrapper .navbar .right ul li {
+                        position: relative;
+                    }
+
+                    .wrapper .navbar .right ul li .dropdown {
+                        position: absolute;
+                        top: 65px;
+                        right: 0;
+                        background: #fff;
+                        padding: 10px 25px;
+                        border-radius: 5px;
+                        display: none;
+                    }
+
+                    .wrapper .navbar .right ul li .dropdown .fas {
+                        margin-right: 10px;
+                    }
+
+                    .wrapper .navbar .right ul li .dropdown:before {
+                        content: "";
+                        position: absolute;
+                        top: -20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border: 10px solid;
+                        border-color: transparent transparent #fff transparent;
+                    }
+
+                    .wrapper .navbar .right ul li.active .dropdown {
+                        display: block;
+                    }
+
+                    .pad {
+                        padding-left: 20px;
+                        padding-left: 20px;
+                    }
+                </style>
+
+                <script>
+                    document.querySelector(".right ul li").addEventListener("click", function () {
+                        this.classList.toggle("active");
+                    });
+                </script>
+            </nav>
+        </div>
+
+        <div class="wrapper1" id="master">
+            <div class="left">
+                <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100">
+                <h4 class="npad">{{request.user}}</h4>
+            </div>
+            <div class="right">
+                <div class="info">
+                    <h3>Information</h3>
+                    <div class="info_data">
+                        <div class="data">
+                            <h4>Email</h4>
+                            <p>{{request.user.email}}</p>
+                        </div>
+                        <div class="data">
+                            <h4>Name</h4>
+                            <p class="pad">{{request.user.last_name}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects">
+                    <div class="projects_data">
+                        <div class="data">
+                            <h4>UserName</h4>
+                            <p>{{request.user}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .updatebuttons {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        text-align: center;
+                        width: 100%;
+                        height: 100%;
+                        margin: 0 auto;
+                        /*   padding: 2em 0em; */
+                    }
+
+                    .updatebuttons.container {
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+                        background-color: #FFF;
+                        padding: 40px 0px;
+                        width: 240px;
+                    }
+
+                    .updatebuttons h1 {
+                        text-align: left;
+                        color: #444;
+                        letter-spacing: 0.05em;
+                        margin: 0 0 0.4em;
+                        font-size: 1em;
+                    }
+
+                    .updatebuttons p {
+                        text-align: left;
+                        color: #444;
+                        letter-spacing: 0.05em;
+                        font-size: 0.8em;
+                        margin: 0 0 2em;
+                    }
+
+
+                    .updatebuttons .btn {
+                        letter-spacing: 0.1em;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 45px;
+                        max-width: 160px;
+                        position: relative;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        width: 100%;
+                    }
+
+                    .updatebuttons .btn:hover {
+                        text-decoration: none;
+                    }
+
+                    /*btn_background*/
+                    .updatebuttons .effect01 {
+                        color: #FFF;
+                        border: 4px solid #000;
+                        box-shadow: 0px 0px 0px 1px #000 inset;
+                        background-color: #000;
+                        overflow: hidden;
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
+                        padding-left: 40px;
+                    }
+
+                    .updatebuttons .effect01:hover {
+                        border: 4px solid #666;
+                        background-color: #FFF;
+                        box-shadow: 0px 0px 0px 4px #EEE inset;
+                    }
+
+                    /*btn_text*/
+                    .updatebuttons .effect01 span {
+                        transition: all 0.2s ease-out;
+                        z-index: 2;
+                        padding-left: 45px;
+                    }
+
+                    .updatebuttons .effect01:hover span {
+                        letter-spacing: 0.13em;
+                        color: #333;
+                    }
+
+                    /*highlight*/
+                    .updatebuttons .effect01:after {
+                        background: #FFF;
+                        border: 0px solid #000;
+                        content: "";
+                        height: 155px;
+                        left: -75px;
+                        opacity: .8;
+                        position: absolute;
+                        top: -50px;
+                        -webkit-transform: rotate(35deg);
+                        transform: rotate(35deg);
+                        width: 50px;
+                        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        /*easeOutCirc*/
+                        z-index: 1;
+                    }
+
+                    .updatebuttons .effect01:hover:after {
+                        background: #FFF;
+                        border: 20px solid #000;
+                        opacity: 0;
+                        left: 120%;
+                        -webkit-transform: rotate(40deg);
+                        transform: rotate(40deg);
+                    }
+                </style>
+                <form action="{% url 'logout'%}" method="POST">
+                    {% csrf_token %}
+                    <div class="updatebuttons">
+                        <div class="container">
+                            <input type="submit" value="Logout" class="btn effect01">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <i class="fas fa-times" onclick="popupToggle();"
+                style="color:rgb(109, 104, 104); font-size: 2.5rem; position: relative; top: 0%; right: 5%; cursor: pointer; "></i>
+        </div>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+            * {
+                margin: 0;
+                padding-left: 2px;
+                box-sizing: border-box;
+                list-style: none;
+                font-family: 'Josefin Sans', sans-serif;
+            }
+
+            .wrapper1 {
+                position: absolute;
+                top: -150%;
+                left: 50%;
+                transform: translate(-60%, -50%);
+                width: 450px;
+                display: flex;
+                box-shadow: 0 1px 20px 0 rgba(69, 90, 100, .08);
+                z-index: 101;
+                visibility: hidden;
+            }
+
+            .wrapper1.active {
+                visibility: visible;
+                top: 50%;
+            }
+
+            .wrapper1 .left {
+                width: 30%;
+                background: linear-gradient(to right, #01a9ac, #01dbdf);
+                padding: 30px 25px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                text-align: center;
+                color: #fff;
+            }
+
+            .wrapper1 .left img {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .wrapper1 .left h4 {
+                margin-bottom: 10px;
+            }
+
+            .wrapper1 .left p {
+                font-size: 12px;
+            }
+
+            .wrapper1 .right {
+                width: 75%;
+                background: #fff;
+                padding: 30px 25px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+
+            .wrapper1 .right .info,
+            .wrapper1 .right .projects {
+                margin-bottom: 25px;
+            }
+
+            .wrapper1 .right .info h3,
+            .wrapper1 .right .projects h3 {
+                margin-bottom: 15px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #e0e0e0;
+                color: #353c4e;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+
+            .wrapper1 .right .info_data,
+            .wrapper1 .right .projects_data {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .wrapper1 .right .info_data .data,
+            .wrapper1 .right .projects_data .data {
+                width: 45%;
+            }
+
+            .wrapper1 .right .info_data .data h4,
+            .wrapper1 .right .projects_data .data h4 {
+                color: #353c4e;
+                margin-bottom: 5px;
+            }
+
+            .wrapper1 .right .info_data .data p,
+            .wrapper1 .right .projects_data .data p {
+                font-size: 13px;
+                margin-bottom: 10px;
+                color: #919aa3;
+            }
+
+            .wrapper1 .social_media ul {
+                display: flex;
+            }
+
+            .wrapper1 .social_media ul li {
+                width: 45px;
+                height: 45px;
+                background: linear-gradient(to right, #01a9ac, #01dbdf);
+                margin-right: 10px;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 45px;
+            }
+
+            .wrapper1 .social_media ul li a {
+                color: #fff;
+                display: block;
+                font-size: 18px;
+            }
+        </style>
+        <script>
+            var a;
+            function popupToggle() {
+                const popup = document.getElementById('master');
+                popup.classList.toggle('active')
+            }
+        </script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'rotate.js' %}"></script>
+
+
+        <div class="cars">
+            <div class="container">
+                <div class="lecica">
+                    <!-- <video src="./particles.mp4" muted="" autoplay=""></video> -->
+                    <div class="let">
+                        <h5><span>Hello</span>{{request.user}}</h5>
+                    </div>
+                    <div class="let1">
+                        <h2><span>B</span>uilding<span> T</span>he future with <span>V</span>R<span> T</span>ech
+                            <span>S</span>olution
+                        </h2>
+                    </div>
+                </div>
+                <style>
+                    .container {
+                        width: 90%;
+                    }
+
+                    .let h5 {
+                        padding-left: 10px;
+                    }
+
+                    .let h5 span {
+                        font-family: "Lobster", sans-serif;
+                        font-size: xx-large;
+                    }
+
+                    .let1 h2 span {
+                        font-family: "Lobster", sans-serif;
+                    }
+
+                    .let1 {
+                        width: 57%;
+                        font-size: 2rem;
+                        font-family: "Lobster", sans-serif;
+                        font-weight: lighter;
+                        margin: 1rem 1rem 2rem 33rem;
+                        padding: 1rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: -webkit-left;
+                    }
+
+                    .lecica h2 {
+                        font-size: 5rem;
+                    }
+
+                    .lecica {
+                        display: flex;
+                        width: 100%;
+                        position: relative;
+                        margin-top: 12rem !important;
+                    }
+
+                    .lecica .let {
+                        position: relative;
+                        z-index: 1;
+                        overflow: hidden;
+                        width: 35%;
+                    }
+
+                    .lecica .let::before {
+                        content: "";
+                        position: absolute;
+                        left: -4%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent 0%, #070707 5%, #070707 100%);
+                        animation: animate 5.5s linear forwards;
+                        animation-delay: 2s;
+                    }
+
+                    .lecica .let1::before {
+                        content: "";
+                        position: absolute;
+                        left: 0%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent 0%, #070707 5%, #070707 100%);
+                        animation: animate 5.5s linear forwards;
+                        animation-delay: 2s;
+                    }
+
+                    @keyframes animate {
+                        0% {
+                            left: 20%;
+                        }
+
+                        100% {
+                            left: -110%;
+                        }
+                    }
+
+                    .lecica span {
+                        color: #ff022c;
+                    }
+                </style>
+
+                <div class="border">
+                    <div class="script">
+                        <script language="javascript">
+                            $(window).load(function () {
+                                $("#view360").rotate({ imageDir: "{% static 'images' %}", imageCount: 45, imageExt: 'png', canvasID: 'mycar', canvasWidth: 480, canvasHeight: 270, autoRotate: true });
+                            });
+                        </script>
+
+                        <div id="view360">
+                            <a href="#" class="autorotate">Auto rotate</a>
+                        </div>
+                    </div>
+                    <div class="d-text">
+                        <h3>Small but powerful.</h3>
+                        <p>
+                            The new Leica M6 offers 4k at 60fps, Raw Video & Full Frame
+                            Sensor.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+            .feature {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                min-height: 100vh;
+            }
+
+            .feature h1 {
+                margin: 3px;
+                font-size: 10em;
+                line-height: 0.9em;
+                font-family: "Lobster", sans-serif;
+                padding-bottom: 320px;
+                padding-right: -74px;
+                padding-left: 25px;
+            }
+
+            .feature h1 span {
+                position: relative;
+                text-transform: uppercase;
+                display: block;
+                font-family: "Lobster", sans-serif;
+            }
+
+            .feature h1 span:nth-child(1):before {
+                content: '';
+                position: absolute;
+                top: cal(50% - 15px);
+                top: 6px;
+                right: 0;
+                width: 50%;
+                height: 30px;
+                background: #f00;
+                transform-origin: right;
+                transform: scaleX(0);
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            .feature h1:hover span:nth-child(1):before {
+                transform: scaleX(1);
+            }
+
+            .feature h1 span:nth-child(2):before {
+                content: '';
+                position: absolute;
+                top: cal(50% - 15px);
+                top: 5px;
+                left: 0;
+                width: 50%;
+                height: 30px;
+                background: #f00;
+                transform-origin: left;
+                transform: scaleX(0);
+                transition: 0.5s;
+                z-index: 1;
+            }
+
+            .feature h1:hover span:nth-child(2):before {
+                transform: scaleX(1);
+            }
+
+            .feature h1 span hide {
+                transition: 0.5s;
+                transition-delay: 1s;
+                font-family: "Lobster", sans-serif;
+            }
+
+            .feature h1:hover span hide {
+                transition-delay: 1s;
+                color: #f00;
+                opacity: 0;
+            }
+
+            .feature h1:hover span:nth-child(1) hide {
+                padding-right: 30px;
+            }
+
+            .feature h1:hover span:nth-child(2) hide {
+                padding-right: 40px;
+            }
+
+            /* <!-- card css --> */
+
+            .feature i {
+                opacity: 0;
+                font-size: 18px;
+                color: #fff;
+                will-change: transform;
+                -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+
+            .feature h2 {
+                pointer-events: none;
+            }
+
+            .feature .container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 4rem;
+                margin-bottom: 260px !important;
+            }
+
+            .feature .container .card {
+                position: relative;
+                width: 500px;
+                height: 200px;
+                background-color: #fff;
+                overflow: hidden;
+                margin-bottom: 4px;
+            }
+
+            .feature .container .card:before {
+                content: "";
+                z-index: 99;
+                position: absolute;
+                top: -10px;
+                left: 32px;
+                display: block;
+                width: 16px;
+                height: 16px;
+                border-radius: 16px;
+                background-color: #E6E5E1;
+            }
+
+            .feature .container .card:after {
+                content: "";
+                z-index: 99;
+                position: absolute;
+                bottom: -10px;
+                left: 32px;
+                display: block;
+                width: 16px;
+                height: 16px;
+                border-radius: 16px;
+                background-color: #E6E5E1;
+            }
+
+            .feature .container .card ul {
+                z-index: 99;
+                position: absolute;
+                left: 39px;
+                top: 5px;
+                list-style-type: none;
+            }
+
+            .feature .container .card ul li {
+                width: 2px;
+                height: 2px;
+                border-radius: 2px;
+                margin: 6px 0;
+                background-color: #E6E5E1;
+            }
+
+            .feature .container .card h2 {
+                z-index: 99;
+                font-family: "Poppins", sans-serif;
+                position: absolute;
+                bottom: 0;
+                right: 130px;
+                font-size: 60px;
+                font-weight: 700;
+                color: #fff;
+            }
+
+            .feature .container .card .fa-arrow-right {
+                z-index: 100;
+                position: absolute;
+                right: 70px;
+                bottom: 15px;
+                font-size: 40px;
+                cursor: pointer;
+            }
+
+            .feature .container .card p {
+                z-index: 99;
+                position: absolute;
+                top: 20px;
+                right: 70px;
+                color: #333;
+                opacity: 0.7;
+                font-size: 12px;
+                letter-spacing: 1px;
+                writing-mode: vertical-lr;
+                -webkit-transition: all 0.2s ease;
+                transition: all 0.2s ease;
+            }
+
+            .feature .container .card .pic {
+                z-index: 100;
+                width: 400px;
+                height: 200px;
+                background-image: url("https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80");
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                filter: grayscale(100%);
+            }
+
+            .feature .container .card .social {
+                position: absolute;
+                left: 60px;
+                top: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-pack: distribute;
+                justify-content: space-around;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                width: 180px;
+                height: 64px;
+                border-radius: 80px;
+            }
+
+            .feature .container .card .social i:nth-of-type(1) {
+                -webkit-transition-delay: 0.4s;
+                transition-delay: 0.4s;
+            }
+
+            .feature .container .card .social i:nth-of-type(2) {
+                -webkit-transition-delay: 0.3s;
+                transition-delay: 0.3s;
+            }
+
+            .feature .container .card .social i:nth-of-type(3) {
+                -webkit-transition-delay: 0.2s;
+                transition-delay: 0.2s;
+            }
+
+            .feature .container .card .social i:nth-of-type(4) {
+                -webkit-transition-delay: 0.1s;
+                transition-delay: 0.1s;
+            }
+
+            .feature .container .card:hover i {
+                opacity: 1;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+            }
+
+            .feature .container .card button {
+                position: absolute;
+                right: 14px;
+                bottom: 14px;
+                width: 30px;
+                height: 30px;
+                background-color: #DA4D1D;
+                border: none;
+                border-radius: 30px;
+                cursor: pointer;
+                outline: none;
+                transition: all 0.3s ease;
+                mix-blend-mode: hard-light;
+            }
+
+            .feature .container .card button i {
+                font-size: 3rem;
+            }
+
+            .feature .container .card:hover button {
+                transform: scale(16.5);
+            }
+
+            .feature .container .card:hover p {
+                color: #fff;
+            }
+
+            .feature .container .card:hover .pic {
+                filter: grayscale(0);
+            }
+
+            .feature .container .card2 .pic {
+                background-image: url("https://images.unsplash.com/photo-1528785198459-ec50485704c7?ixlib=rb-0.3.5&s=3a2fc3039516555bbb2e9cd2967bd321&auto=format&fit=crop&w=1537&q=80");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+
+            .feature .container .card2 button {
+                background-color: #2b26c3;
+            }
+
+            .feature .dr {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                width: 100px;
+            }
+        </style>
+
+        <div class="features-container">
+            <section class="feature" id="feature">
+                <h1>
+                    <span>Do<hide>n't</hide></span>
+                    <span>
+                        <hide>Qu</hide>it
+                    </span>
+                </h1>
+
+                <div class="container">
+                    <div class="card">
+                        <a href="{% url 'covid' %}">
+                        <h2>API</h2>
+                            <i class="fa fa-arrow-right"></i>
+                        <p>a lonely trip.</p>
+                        <div class="pic"></div>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="social">
+                            <i class="fa fa-facebook-f"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-github"></i>
+                        </div>
+                        <button>
+                        </button>
+                    </a>
+                    </div>
+                    <div class="card card2">
+                        <a href="{% url 'weatherhome' %}">
+                        <h2>Weather API</h2>
+                        <i class="fa fa-arrow-right"></i>
+                        <p>a lonely trip.</p>
+                        <div class="pic"></div>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="social">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-instagram"></i>
+                            <i class="fa fa-github"></i>
+                        </div>
+                        <button>
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <img class="wave" src="{% static 'img/wave.png' %}" alt="" />
+        </div>
+
+
+        <form method="post" enctype="multipart/form-data" action="predict" novalidate>
+            {% csrf_token %}
+            <div class="form" style="background-image: url('static/back.jpg');">
+                <div class="container">
+                    <div class="m2">
+                        <div class="f1 m1">
+                            <input list="browsers" name="name" class="inpt" placeholder="Select Car">
+                            <datalist id="browsers" name="name">
+                                <option value="Maruti Swift Dzire VDI"></option>
+                                <option value="Maruti 800 AC"></option>
+                                <option value="Honda Civic 2006-2010 1.8 S MT"></option>
+                                <option value="Volkswagen Vento 1.5 TDI Highline AT"></option>
+                                <option value="Hyundai i20 1.4 CRDi Magna"></option>
+                                <option value="Hyundai Verna 1.6 VTVT"></option>
+                                <option value="Maruti Swift ZXI"></option>
+                                <option value="Maruti Alto K10 VXI AGS"></option>
+                                <option value="Volkswagen Vento Diesel Comfortline"></option>
+                                <option value="Chevrolet Beat Diesel LS"></option>
+                                <option value="Hyundai Grand i10 1.2 Kappa Magna"></option>
+                                <option value="Volkswagen Jetta 2013-2015 2.0L TDI Highline AT"></option>
+                                <option value="BMW X5 xDrive 30d"></option>
+                                <option value="Mahindra Scorpio SLE BSIV"></option>
+                                <option value="Tata Nano XTA"></option>
+                                <option value="Maruti Alto K10 LXI"></option>
+                                <option value="Tata Safari Storme EX"></option>
+                                <option value="Land Rover Freelander 2 SE"></option>
+                                <option value="Mercedes-Benz E-Class 280 CDI"></option>
+                                <option value="Maruti Ciaz ZDi Plus SHVS"></option>
+                                <option value="Volkswagen Polo Petrol Trendline 1.2L"></option>
+                                <option value="Jaguar XE 2016-2019 2.0L Diesel Prestige"></option>
+                                <option value="Mercedes-Benz E-Class E250 CDI Avantgrade"></option>
+                                <option value="Mercedes-Benz GLE 350d"></option>
+                                <option value="Jaguar XF 2.0 Diesel Portfolio"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E250 CDI Elegance"></option>
+                                <option value="Honda Jazz 1.2 SV i VTEC"></option>
+                                <option value="Hyundai Verna 1.6 SX CRDI (O) AT"></option>
+                                <option value="Honda Brio V MT"></option>
+                                <option value="Maruti Vitara Brezza VDi Option"></option>
+                                <option value="Hyundai Santro Xing GL"></option>
+                                <option value="Hyundai Elite i20 Petrol Asta"></option>
+                                <option value="Nissan Micra Diesel XV"></option>
+                                <option value="Honda Civic 2006-2010 1.8 V MT"></option>
+                                <option value="Maruti Baleno Delta 1.2"></option>
+                                <option value="Maruti Ciaz VXi Plus"></option>
+                                <option value="Tata Nano Twist XT"></option>
+                                <option value="Lexus ES 300h"></option>
+                                <option value="Mercedes-Benz B Class B180"></option>
+                                <option value="Toyota Innova 2.5 G (Diesel) 7 Seater BS IV"></option>
+                                <option value="Hyundai i20 1.2 Asta"></option>
+                                <option value="Maruti Swift VXi BSIV"></option>
+                                <option value="Maruti Baleno Zeta Automatic"></option>
+                                <option value="Honda Jazz 1.2 V CVT i VTEC"></option>
+                                <option value="Honda City i VTEC VX Option"></option>
+                                <option value="Hyundai i20 Magna 1.4 CRDi"></option>
+                                <option value="Volvo V40 D3 R-Design"></option>
+                                <option value="Maruti Swift AMT ZXI"></option>
+                                <option value="Honda Amaze V CVT Petrol BSIV"></option>
+                                <option value="Maruti Swift Dzire ZDi"></option>
+                                <option value="Honda City i-VTEC CVT VX"></option>
+                                <option value="Maruti Ertiga SHVS VDI"></option>
+                                <option value="Maruti Omni 8 Seater BSIV"></option>
+                                <option value="Honda City i DTEC V"></option>
+                                <option value="Toyota Innova 2.5 VX (Diesel) 8 Seater"></option>
+                                <option value="Maruti Ciaz VDi Plus SHVS"></option>
+                                <option value="Volkswagen Vento 1.6 Highline"></option>
+                                <option value="Mercedes-Benz M-Class ML 250 CDI"></option>
+                                <option value="Maruti SX4 ZXI MT BSIV"></option>
+                                <option value="Toyota Corolla Altis 2008-2013 1.8 VL AT"></option>
+                                <option value="Skoda Superb Style 1.8 TSI AT"></option>
+                                <option value="Nissan Sunny 2011-2014 Diesel XL"></option>
+                                <option value="Tata Indica V2 eLS"></option>
+                                <option value="Volvo XC40 D4 Inscription BSIV"></option>
+                                <option value="Renault KWID RXT Optional"></option>
+                                <option value="Maruti Celerio ZXI"></option>
+                                <option value="BMW 3 Series 320d Sport Line"></option>
+                                <option value="Hyundai Verna CRDi SX"></option>
+                                <option value="Maruti Dzire VDI"></option>
+                                <option value="Chevrolet Spark 1.0 LS"></option>
+                                <option value="Maruti Swift VXI Optional"></option>
+                                <option value="Hyundai Verna SX CRDi AT"></option>
+                                <option value="Maruti Wagon R LX BSIII"></option>
+                                <option value="Mercedes-Benz E-Class 2015-2017 E250 CDI Avantgarde"></option>
+                                <option value="Maruti Ritz LDi"></option>
+                                <option value="Honda Jazz 1.2 VX i VTEC"></option>
+                                <option value="Mercedes-Benz GL-Class 2007 2012 350 CDI Luxury"></option>
+                                <option value="Toyota Innova Crysta 2.4 VX MT"></option>
+                                <option value="Mahindra XUV500 AT W10 FWD"></option>
+                                <option value="Mahindra Bolero ZLX"></option>
+                                <option value="Jaguar XF 3.0 Litre S Premium Luxury"></option>
+                                <option value="Maruti Ertiga SHVS ZDI Plus"></option>
+                                <option value="Maruti SX4 Vxi BSIV"></option>
+                                <option value="Skoda Octavia Elegance 2.0 TDI AT"></option>
+                                <option value="Hyundai i20 Magna Optional 1.2"></option>
+                                <option value="Maruti Swift AMT VVT VXI"></option>
+                                <option value="Mercedes-Benz CLA 200 CDI Sport"></option>
+                                <option value="Maruti Swift Dzire ZDI"></option>
+                                <option value="Hyundai Santro Xing XL eRLX Euro III"></option>
+                                <option value="BMW 5 Series 2003-2012 520d"></option>
+                                <option value="Hyundai i20 1.2 Magna Executive"></option>
+                                <option value="Audi A4 New 2.0 TDI Multitronic"></option>
+                                <option value="Hyundai Santro Xing XL"></option>
+                                <option value="Toyota Innova Crysta 2.4 ZX MT"></option>
+                                <option value="BMW 5 Series 2013-2017 530d M Sport"></option>
+                                <option value="Ford EcoSport 1.5 Diesel Titanium BSIV"></option>
+                                <option value="Toyota Innova Crysta 2.8 GX AT"></option>
+                                <option value="Ford Ecosport 1.5 DV5 MT Trend"></option>
+                                <option value="Maruti Alto 800 2016-2019 VXI"></option>
+                                <option value="Mahindra TUV 300 mHAWK100 T8"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa S Option"></option>
+                                <option value="Jaguar XF Diesel"></option>
+                                <option value="Volkswagen Vento Diesel Trendline"></option>
+                                <option value="Toyota Fortuner 4x2 4 Speed AT"></option>
+                                <option value="Toyota Fortuner 2.8 2WD AT"></option>
+                                <option value="Tata Indigo LS"></option>
+                                <option value="Honda Amaze SX i-VTEC"></option>
+                                <option value="Volkswagen Ameo 1.2 MPI Comfortline"></option>
+                                <option value="Maruti Swift LDI"></option>
+                                <option value="Hyundai Creta 1.6 VTVT S"></option>
+                                <option value="Hyundai Creta 1.6 SX Plus Diesel"></option>
+                                <option value="Toyota Fortuner 4x4 AT"></option>
+                                <option value="Audi Q7 4.2 TDI Quattro Technology"></option>
+                                <option value="Honda Jazz 1.2 V i VTEC"></option>
+                                <option value="Honda City i VTEC VX"></option>
+                                <option value="Hyundai i20 1.4 Sportz"></option>
+                                <option value="Hyundai EON Era"></option>
+                                <option value="Ford Ecosport 1.5 Ti VCT MT Titanium"></option>
+                                <option value="Maruti SX4 Vxi BSIII"></option>
+                                <option value="Renault Duster 85PS Diesel RxL Optional"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa S"></option>
+                                <option value="Maruti Swift Dzire Vdi BSIV"></option>
+                                <option value="Honda City V AT"></option>
+                                <option value="Maruti Swift 1.3 VXi"></option>
+                                <option value="Hyundai i10 Magna AT"></option>
+                                <option value="Mahindra XUV500 W10 AWD"></option>
+                                <option value="Mahindra Scorpio VLX"></option>
+                                <option value="Nissan Micra XV CVT"></option>
+                                <option value="Tata Tiago 1.2 Revotron XT"></option>
+                                <option value="Renault KWID 1.0 RXT Optional"></option>
+                                <option value="Hyundai Santro Xing GL Plus"></option>
+                                <option value="Audi A4 35 TDI Premium"></option>
+                                <option value="Toyota Innova 2.5 G (Diesel) 7 Seater"></option>
+                                <option value="Tata Zest Revotron 1.2T XM"></option>
+                                <option value="Maruti Ertiga ZXI"></option>
+                                <option value="Tata Indigo LX"></option>
+                                <option value="Hyundai Verna CRDi"></option>
+                                <option value="Audi Q5 2.0 TDI Premium Plus"></option>
+                                <option value="Ford Endeavour 3.0L 4X4 AT"></option>
+                                <option value="Toyota Corolla Altis G"></option>
+                                <option value="Audi A6 2.7 TDI"></option>
+                                <option value="Honda City 1.5 GXI"></option>
+                                <option value="Hyundai Creta 1.6 SX"></option>
+                                <option value="Honda Amaze SX i-DTEC"></option>
+                                <option value="Tata New Safari DICOR 2.2 EX 4x2"></option>
+                                <option value="Maruti Wagon R VXI 1.2"></option>
+                                <option value="Honda City 1.5 S AT"></option>
+                                <option value="Audi Q5 30 TDI quattro Premium Plus"></option>
+                                <option value="Mercedes-Benz New C-Class C 220 CDI BE Avantgare"></option>
+                                <option value="Mercedes-Benz A Class A180 CDI"></option>
+                                <option value="Maruti Swift Dzire ZXI"></option>
+                                <option value="Maruti Swift Dzire LDi"></option>
+                                <option value="BMW X5 2014-2019 xDrive 30d Design Pure Experience 7 Seater"></option>
+                                <option value="Toyota Fortuner 2.8 4WD MT"></option>
+                                <option value="Hyundai Verna CRDi 1.6 SX Option"></option>
+                                <option value="Ford Endeavour 3.2 Trend AT 4X4"></option>
+                                <option value="Toyota Innova 2.5 G4 Diesel 7-seater"></option>
+                                <option value="Tata Tiago 1.2 Revotron XZ"></option>
+                                <option value="Maruti SX4 S Cross DDiS 320 Zeta"></option>
+                                <option value="Hyundai Santro Xing XO"></option>
+                                <option value="Hyundai Verna 1.6 CRDi SX"></option>
+                                <option value="Maruti Vitara Brezza VDi"></option>
+                                <option value="Tata Zest Revotron 1.2T XMS"></option>
+                                <option value="Honda City ZX CVT"></option>
+                                <option value="Audi Q5 2008-2012 2.0 TDI"></option>
+                                <option value="Tata Indica Vista Quadrajet LS"></option>
+                                <option value="Toyota Corolla H2"></option>
+                                <option value="Nissan Sunny 2011-2014 Diesel XV"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E250 CDI Blue Efficiency"></option>
+                                <option value="Toyota Camry Hybrid"></option>
+                                <option value="Maruti Eeco 5 STR With AC Plus HTR CNG"></option>
+                                <option value="Skoda Superb Elegance 2.0 TDI CR AT"></option>
+                                <option value="Toyota Corolla Altis Diesel D4DG"></option>
+                                <option value="Mahindra Bolero 2011-2019 SLX"></option>
+                                <option value="Maruti Ciaz ZDi Plus"></option>
+                                <option value="Maruti Ritz LXi"></option>
+                                <option value="Honda City i-VTEC VX"></option>
+                                <option value="Hyundai i10 Sportz 1.1L"></option>
+                                <option value="Hyundai EON Sportz"></option>
+                                <option value="Honda Civic 2006-2010 1.8 V AT"></option>
+                                <option value="BMW 3 Series 320d Prestige"></option>
+                                <option value="Volkswagen Passat Diesel Highline 2.0 TDI"></option>
+                                <option value="Maruti Swift VXI BSIII"></option>
+                                <option value="Mercedes-Benz E-Class 2015-2017 E250 Edition E"></option>
+                                <option value="Hyundai i20 Magna Optional 1.4 CRDi"></option>
+                                <option value="Hyundai i10 Sportz 1.2 AT"></option>
+                                <option value="Hyundai i20 Asta"></option>
+                                <option value="Maruti Swift VDI Optional"></option>
+                                <option value="BMW X5 3.0d"></option>
+                                <option value="Hyundai i20 Sportz Option 1.2"></option>
+                                <option value="Maruti Wagon R CNG LXI"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E 220 CDI Avantgarde"></option>
+                                <option value="Nissan Micra Diesel XV Premium"></option>
+                                <option value="Renault Duster 110PS Diesel RxZ AMT"></option>
+                                <option value="Honda City i-VTEC V"></option>
+                                <option value="Mini Cooper 5 DOOR D"></option>
+                                <option value="BMW X1 sDrive 20d Exclusive"></option>
+                                <option value="Hyundai i10 Asta"></option>
+                                <option value="Audi A6 2011-2015 35 TDI Technology"></option>
+                                <option value="Mercedes-Benz New C-Class C 220 CDI Style"></option>
+                                <option value="Hyundai i20 Magna 1.4 CRDi (Diesel)"></option>
+                                <option value="Mercedes-Benz GLA Class 200 CDI"></option>
+                                <option value="Toyota Corolla H4"></option>
+                                <option value="Audi A6 3.0 TDI quattro"></option>
+                                <option value="Hyundai Santro Xing XO eRLX Euro II"></option>
+                                <option value="Chevrolet Aveo U-VA 1.2 LS"></option>
+                                <option value="Ford Fiesta Classic 1.4 Duratorq CLXI"></option>
+                                <option value="Audi A6 2011-2015 2.0 TDI"></option>
+                                <option value="Maruti Swift VDI BSIV W ABS"></option>
+                                <option value="Maruti Baleno Delta 1.3"></option>
+                                <option value="Audi Q3 35 TDI Quattro Premium Plus"></option>
+                                <option value="Maruti Ciaz ZXi"></option>
+                                <option value="Audi Q7 35 TDI Quattro Technology"></option>
+                                <option value="BMW 5 Series 520d Sedan"></option>
+                                <option value="Honda City 1.5 V MT Exclusive"></option>
+                                <option value="Maruti Baleno Sigma 1.2"></option>
+                                <option value="Honda Accord 2.4 MT"></option>
+                                <option value="Nissan Terrano XV Premium 110 PS"></option>
+                                <option value="Honda City 1.3 EXI"></option>
+                                <option value="Maruti Swift Dzire VDI Optional"></option>
+                                <option value="Honda City 1.5 EXI"></option>
+                                <option value="Maruti A-Star Lxi"></option>
+                                <option value="Maruti Swift Dzire AMT ZDI"></option>
+                                <option value="Honda Accord 2.4 AT"></option>
+                                <option value="Skoda Rapid 1.6 TDI Ambition"></option>
+                                <option value="Toyota Etios Liva G"></option>
+                                <option value="Hyundai i20 1.4 CRDi Asta"></option>
+                                <option value="Hyundai Santa Fe 4WD AT"></option>
+                                <option value="Renault Pulse RxL"></option>
+                                <option value="Maruti Swift Ldi BSIII"></option>
+                                <option value="Mitsubishi Pajero Sport 4X4"></option>
+                                <option value="Tata Indica Vista Quadrajet VX"></option>
+                                <option value="Audi Q7 3.0 TDI Quattro Technology"></option>
+                                <option value="Renault Duster 85PS Diesel RxL Option"></option>
+                                <option value="Maruti 800 Std"></option>
+                                <option value="Mini Cooper Convertible S"></option>
+                                <option value="Honda Mobilio S i DTEC"></option>
+                                <option value="Honda Brio S Option MT"></option>
+                                <option value="Volkswagen Polo 1.5 TDI Comfortline"></option>
+                                <option value="Maruti Wagon R VXI AMT"></option>
+                                <option value="Hyundai Santro Xing XP"></option>
+                                <option value="Fiat Avventura MULTIJET Emotion"></option>
+                                <option value="Maruti Swift Lxi BSIII"></option>
+                                <option value="Porsche Panamera Diesel"></option>
+                                <option value="Honda Amaze E i-Vtech"></option>
+                                <option value="BMW X3 xDrive20d"></option>
+                                <option value="Maruti SX4 Zxi BSIII"></option>
+                                <option value="Toyota Innova 2.5 GX (Diesel) 8 Seater"></option>
+                                <option value="Volkswagen Vento 1.5 TDI Comfortline"></option>
+                                <option value="Hyundai Xcent 1.2 CRDi S"></option>
+                                <option value="Ford Ikon 1.4 TDCi DuraTorq"></option>
+                                <option value="Honda Amaze S AT i-Vtech"></option>
+                                <option value="Mercedes-Benz S Class 2005 2013 S 350 CDI"></option>
+                                <option value="Jeep Compass 2.0 Longitude"></option>
+                                <option value="Toyota Innova 2.5 VX (Diesel) 8 Seater BS IV"></option>
+                                <option value="Tata Indigo CS eVX"></option>
+                                <option value="Skoda Rapid 1.5 TDI AT Elegance"></option>
+                                <option value="Maruti Celerio ZXI Optional"></option>
+                                <option value="Mercedes-Benz B Class B200 CDI"></option>
+                                <option value="Hyundai Verna VTVT 1.6 SX Option"></option>
+                                <option value="Hyundai Elantra 2.0 SX Option AT"></option>
+                                <option value="Hyundai i20 Sportz Option"></option>
+                                <option value="Hyundai Verna 1.6 CRDi S"></option>
+                                <option value="Hyundai Creta 1.6 SX Option Diesel"></option>
+                                <option value="Volkswagen Vento 1.6 Comfortline"></option>
+                                <option value="Land Rover Freelander 2 TD4 SE"></option>
+                                <option value="Audi Q3 35 TDI Quattro Premium"></option>
+                                <option value="Tata Zest Quadrajet 1.3 75PS XE"></option>
+                                <option value="Honda Jazz 1.5 S i DTEC"></option>
+                                <option value="Honda Brio 1.2 VX MT"></option>
+                                <option value="Mercedes-Benz GL-Class 350 CDI Blue Efficiency"></option>
+                                <option value="Volkswagen Polo Petrol Highline 1.6L"></option>
+                                <option value="Hyundai i10 Magna 1.1L"></option>
+                                <option value="Maruti Baleno RS 1.0 Petrol"></option>
+                                <option value="Hyundai Santro GLS II - Euro II"></option>
+                                <option value="Honda BRV i-VTEC V CVT"></option>
+                                <option value="Tata Nexon 1.2 Revotron XZ Plus"></option>
+                                <option value="Honda Mobilio S i VTEC"></option>
+                                <option value="Mahindra TUV 300 T8"></option>
+                                <option value="Mahindra TUV 300 2015-2019 T8"></option>
+                                <option value="BMW 3 Series 320i Sedan"></option>
+                                <option value="Maruti Ciaz AT ZXi"></option>
+                                <option value="Skoda Rapid 1.5 TDI Ambition"></option>
+                                <option value="Maruti Swift DDiS VDI"></option>
+                                <option value="Tata Indica GLS BS IV"></option>
+                                <option value="Maruti Ciaz 1.3 Alpha"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 CGI Avantgarde"></option>
+                                <option value="Maruti Celerio VXI AMT"></option>
+                                <option value="Renault Duster 110PS Diesel RxZ Plus"></option>
+                                <option value="Toyota Corolla Altis VL"></option>
+                                <option value="Toyota Etios V"></option>
+                                <option value="Hyundai Elantra CRDi SX AT"></option>
+                                <option value="BMW X1 sDrive 20d Sportline"></option>
+                                <option value="Skoda Rapid 1.6 TDI Elegance"></option>
+                                <option value="Audi A6 35 TDI Matrix"></option>
+                                <option value="Datsun redi-GO T Option"></option>
+                                <option value="Maruti Ciaz RS ZDi Plus SHVS"></option>
+                                <option value="Skoda Laura Ambiente"></option>
+                                <option value="Hyundai Creta 1.6 SX Option"></option>
+                                <option value="Toyota Corolla 1.8 J"></option>
+                                <option value="Mercedes-Benz New C-Class C250 Avantgarde"></option>
+                                <option value="Tata Zest Revotron 1.2 XT"></option>
+                                <option value="Maruti Ciaz VDI SHVS"></option>
+                                <option value="Hyundai Santa Fe 4X4"></option>
+                                <option value="Ford Figo 1.5D Trend MT"></option>
+                                <option value="Volkswagen Ameo 1.2 MPI Highline"></option>
+                                <option value="Mercedes-Benz GLE 250d"></option>
+                                <option value="Hyundai Verna 1.6 CRDI"></option>
+                                <option value="Tata Safari DICOR 2.2 LX 4x2"></option>
+                                <option value="Chevrolet Beat Diesel"></option>
+                                <option value="Hyundai i20 Active 1.4 SX"></option>
+                                <option value="Skoda Octavia Classic 1.9 TDI MT"></option>
+                                <option value="Maruti Wagon R VXI Optional"></option>
+                                <option value="Ford Ecosport 1.5 DV5 MT Ambiente"></option>
+                                <option value="Volkswagen Vento 2013-2015 1.6 Comfortline"></option>
+                                <option value="BMW X1 sDrive 20d xLine"></option>
+                                <option value="Honda Jazz 1.5 VX i DTEC"></option>
+                                <option value="Honda City 2017-2020 GXi"></option>
+                                <option value="Maruti Zen LXI"></option>
+                                <option value="Ford EcoSport 1.5 Ti VCT AT Titanium"></option>
+                                <option value="Hyundai i20 1.4 Asta"></option>
+                                <option value="Hyundai Verna 1.6 SX VTVT (O) AT"></option>
+                                <option value="Renault Koleos 2.0 Diesel"></option>
+                                <option value="Hyundai i20 Sportz AT 1.4"></option>
+                                <option value="Honda Jazz V"></option>
+                                <option value="BMW 3 Series 320d Sedan"></option>
+                                <option value="Mercedes-Benz E-Class E 220 d"></option>
+                                <option value="Honda City ZX VTEC"></option>
+                                <option value="Ford Figo Petrol Titanium"></option>
+                                <option value="Honda Amaze VX i-Vtech"></option>
+                                <option value="Ford Endeavour 2.5L 4X2 MT"></option>
+                                <option value="Hyundai Santa Fe 4x4 AT"></option>
+                                <option value="Hyundai EON D Lite"></option>
+                                <option value="Maruti Dzire AMT ZDI Plus"></option>
+                                <option value="Audi Q3 2012-2015 2.0 TDI Quattro Premium Plus"></option>
+                                <option value="Maruti Swift Dzire 1.2 Vxi BSIV"></option>
+                                <option value="Tata Zest Revotron 1.2T XE"></option>
+                                <option value="Volkswagen CrossPolo 1.5 TDI"></option>
+                                <option value="BMW 5 Series 2003-2012 525d"></option>
+                                <option value="Honda CR-V 2.4 AT"></option>
+                                <option value="Audi A4 35 TDI Premium Plus"></option>
+                                <option value="Honda City i-VTEC CVT ZX"></option>
+                                <option value="Renault Duster Petrol RxL"></option>
+                                <option value="Skoda Laura Ambiente 2.0 TDI CR AT"></option>
+                                <option value="Hyundai Grand i10 Asta Option AT"></option>
+                                <option value="Nissan Terrano XL D Option"></option>
+                                <option value="Maruti 800 Std BSIII"></option>
+                                <option value="Hyundai i10 Magna 1.2 iTech SE"></option>
+                                <option value="Audi Q3 2.0 TDI"></option>
+                                <option value="Honda WRV i-VTEC VX"></option>
+                                <option value="Nissan Terrano XV 110 PS"></option>
+                                <option value="Maruti Swift Dzire LXI"></option>
+                                <option value="Ford EcoSport 1.5 Diesel Titanium Plus BSIV"></option>
+                                <option value="Mahindra Bolero 2011-2019 ZLX"></option>
+                                <option value="Nissan Terrano XL 110 PS"></option>
+                                <option value="Renault KWID RXL"></option>
+                                <option value="Maruti Ritz VXI"></option>
+                                <option value="Ford EcoSport 1.5 Diesel Titanium"></option>
+                                <option value="Nissan Terrano XL"></option>
+                                <option value="Maruti Alto 800 2016-2019 CNG LXI"></option>
+                                <option value="Maruti Zen LXi - BS III"></option>
+                                <option value="Maruti Celerio ZDi"></option>
+                                <option value="Maruti Zen Estilo LXI BS IV"></option>
+                                <option value="Jeep Compass 2.0 Limited"></option>
+                                <option value="Nissan Sunny 2011-2014 XL"></option>
+                                <option value="Skoda Octavia Elegance 1.8 TSI AT"></option>
+                                <option value="Maruti Vitara Brezza LDi Option"></option>
+                                <option value="Maruti Baleno Alpha"></option>
+                                <option value="Mahindra Thar CRDe"></option>
+                                <option value="BMW X6 xDrive30d"></option>
+                                <option value="Hyundai Creta 1.6 CRDi SX Plus"></option>
+                                <option value="Toyota Corolla Altis 1.8 VL CVT"></option>
+                                <option value="Honda City 1.5 E MT"></option>
+                                <option value="Land Rover Range Rover HSE Dynamic"></option>
+                                <option value="Land Rover Range Rover 2.2L Pure"></option>
+                                <option value="Ford Fiesta EXi 1.4 TDCi Ltd"></option>
+                                <option value="Toyota Innova 2.5 GX 7 STR"></option>
+                                <option value="Maruti Ertiga VXI CNG"></option>
+                                <option value="Renault Duster 85PS Diesel RxE"></option>
+                                <option value="BMW 6 Series GT 630d Luxury Line"></option>
+                                <option value="BMW 7 Series 730Ld Sedan"></option>
+                                <option value="Renault Duster 110PS Diesel RxL AMT"></option>
+                                <option value="Tata Indigo CS LS (TDI) BS III"></option>
+                                <option value="Maruti Wagon R LX"></option>
+                                <option value="Hyundai i20 Active 1.4 SX Dual Tone"></option>
+                                <option value="Maruti Ciaz ZXi Plus"></option>
+                                <option value="Tata Sumo EX"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 Kompressor Elegance AT"></option>
+                                <option value="Hyundai Getz GLE"></option>
+                                <option value="Maruti Baleno Zeta 1.3"></option>
+                                <option value="Audi Q5 2.0 TDI"></option>
+                                <option value="Honda City V MT Exclusive"></option>
+                                <option value="Honda Jazz S"></option>
+                                <option value="Hyundai i20 Asta Option 1.4 CRDi"></option>
+                                <option value="Honda CR-V 2.4 4WD AT"></option>
+                                <option value="Honda Jazz VX Diesel"></option>
+                                <option value="Maruti Omni MPI STD BSIV"></option>
+                                <option value="Ford EcoSport 1.0 Ecoboost Titanium Plus"></option>
+                                <option value="Skoda Laura 1.9 TDI AT Ambiente"></option>
+                                <option value="Volkswagen Polo 1.2 MPI Trendline"></option>
+                                <option value="Maruti Ciaz Zeta"></option>
+                                <option value="Volkswagen Polo GT TDI"></option>
+                                <option value="Ford EcoSport 1.5 TDCi Titanium Plus BSIV"></option>
+                                <option value="Honda Accord 2.4 Inspire M/T"></option>
+                                <option value="Ford EcoSport 1.5 TDCi Titanium BSIV"></option>
+                                <option value="Maruti Zen Estilo LXI BSIII"></option>
+                                <option value="Maruti SX4 ZDI"></option>
+                                <option value="Mahindra Scorpio 2009-2014 SLE 7S BSIV"></option>
+                                <option value="Maruti Zen Estilo VXI BSIII"></option>
+                                <option value="BMW 5 Series 525d Sedan"></option>
+                                <option value="Hyundai i20 Active 1.2 S"></option>
+                                <option value="Mercedes-Benz New C-Class C 250 CDI Avantgarde"></option>
+                                <option value="Audi Q3 2012-2015 35 TDI Quattro Premium Plus"></option>
+                                <option value="Tata Indica Vista TDI LX"></option>
+                                <option value="Maruti Wagon R VXI BSIII"></option>
+                                <option value="Hyundai Accent CRDi"></option>
+                                <option value="Chevrolet Sail 1.2 LS"></option>
+                                <option value="Audi Q5 3.0 TDI Quattro Technology"></option>
+                                <option value="Mitsubishi Pajero Sport 4X4 AT"></option>
+                                <option value="Toyota Corolla Altis 1.8 G"></option>
+                                <option value="Ford Fiesta 1.4 Duratorq ZXI"></option>
+                                <option value="Mercedes-Benz C-Class Progressive C 220d"></option>
+                                <option value="Toyota Etios G Safety"></option>
+                                <option value="Maruti Ritz LXI"></option>
+                                <option value="Hyundai Verna Transform VTVT"></option>
+                                <option value="BMW 3 Series 320d Corporate Edition"></option>
+                                <option value="Mercedes-Benz S Class 2005 2013 S 350 L"></option>
+                                <option value="Maruti Ignis 1.2 Delta BSIV"></option>
+                                <option value="Tata Manza Aura (ABS) Quadrajet BS IV"></option>
+                                <option value="Hyundai Verna Transform SX VGT CRDi"></option>
+                                <option value="Hyundai i20 1.2 Sportz Option"></option>
+                                <option value="Hyundai Verna Xi (Petrol)"></option>
+                                <option value="Renault KWID AMT RXL"></option>
+                                <option value="Maruti Baleno Alpha Automatic"></option>
+                                <option value="Hyundai Getz GLS"></option>
+                                <option value="Hyundai Santro GLS I - Euro II"></option>
+                                <option value="Audi Q7 45 TDI Quattro Technology"></option>
+                                <option value="Honda City i DTec V"></option>
+                                <option value="Volkswagen Jetta 2007-2011 1.9 Highline TDI"></option>
+                                <option value="Honda CR-V 2.4L 4WD AT"></option>
+                                <option value="Chevrolet Optra Magnum 2.0 LT"></option>
+                                <option value="Maruti Swift Ldi BSIV"></option>
+                                <option value="Renault Duster 110PS Diesel RxZ Pack"></option>
+                                <option value="Maruti Celerio ZXI AT"></option>
+                                <option value="Tata Indica V2 DLS"></option>
+                                <option value="Maruti Ciaz ZDi SHVS"></option>
+                                <option value="Maruti Swift VVT VXI"></option>
+                                <option value="Land Rover Range Rover 2.2L Prestige"></option>
+                                <option value="Skoda Laura 1.8 TSI Ambiente"></option>
+                                <option value="Audi A6 2.0 TDI Design Edition"></option>
+                                <option value="Toyota Corolla Altis 1.8 GL"></option>
+                                <option value="Ford EcoSport 1.5 Petrol Titanium Plus AT"></option>
+                                <option value="Audi Q7 3.0 TDI quattro"></option>
+                                <option value="Volkswagen Ameo 1.5 TDI Highline"></option>
+                                <option value="Honda CR-V 2.4 MT"></option>
+                                <option value="Mahindra Ssangyong Rexton RX5"></option>
+                                <option value="Maruti Wagon R LXI Optional"></option>
+                                <option value="Mercedes-Benz M-Class ML 350 CDI"></option>
+                                <option value="Mahindra Xylo D4"></option>
+                                <option value="Honda Amaze S Petrol"></option>
+                                <option value="Toyota Fortuner 2.8 2WD MT"></option>
+                                <option value="Maruti Dzire LDI"></option>
+                                <option value="Maruti S Cross DDiS 320 Alpha"></option>
+                                <option value="Mercedes-Benz E-Class E250 CDI Launch Edition"></option>
+                                <option value="Tata Indigo CS LX (TDI) BS III"></option>
+                                <option value="Tata Hexa XTA"></option>
+                                <option value="Mercedes-Benz New C-Class C 250 CDI Elegance"></option>
+                                <option value="Renault Fluence Diesel E4"></option>
+                                <option value="BMW X5 xDrive 30d M Sport"></option>
+                                <option value="Maruti Baleno Alpha 1.2"></option>
+                                <option value="Audi A4 1.8 TFSI"></option>
+                                <option value="Maruti Zen LX"></option>
+                                <option value="Mahindra XUV500 W4"></option>
+                                <option value="Maruti Baleno Delta Automatic"></option>
+                                <option value="Volkswagen Polo 1.5 TDI Trendline"></option>
+                                <option value="Toyota Etios Liva 1.2 G"></option>
+                                <option value="Hyundai Verna 1.6 Xi ABS"></option>
+                                <option value="Maruti Zen Estilo 1.1 VXI BSIII"></option>
+                                <option value="Toyota Etios VD"></option>
+                                <option value="Honda Jazz V CVT"></option>
+                                <option value="Tata Indica DLS"></option>
+                                <option value="Mercedes-Benz New C-Class C 220 CDI CLASSIC"></option>
+                                <option value="Mahindra Bolero SLX"></option>
+                                <option value="Skoda Superb 1.8 TSI MT"></option>
+                                <option value="Mahindra Xylo H4"></option>
+                                <option value="Toyota Innova Crysta 2.4 VX MT 8S"></option>
+                                <option value="Hyundai EON Magna"></option>
+                                <option value="Mercedes-Benz New C-Class 220 CDI MT"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E 250 Elegance"></option>
+                                <option value="Maruti Omni 8 Seater BSII"></option>
+                                <option value="Honda Mobilio RS i DTEC"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E250 CDI Avantgarde"></option>
+                                <option value="Skoda Rapid 1.5 TDI Elegance"></option>
+                                <option value="Hyundai Grand i10 1.2 Kappa Sportz Option"></option>
+                                <option value="Hyundai i20 Sportz Diesel"></option>
+                                <option value="Mini Cooper 3 DOOR D"></option>
+                                <option value="Mercedes-Benz E-Class 200 Kompressor Elegance"></option>
+                                <option value="Honda CR-V 2.0L 2WD MT"></option>
+                                <option value="Maruti Dzire VXI"></option>
+                                <option value="Renault Scala Diesel RxL"></option>
+                                <option value="Jeep Compass 2.0 Limited Option 4X4"></option>
+                                <option value="Mahindra KUV 100 G80 K8 Dual Tone"></option>
+                                <option value="BMW X1 xDrive 20d xLine"></option>
+                                <option value="Maruti Baleno Alpha Diesel"></option>
+                                <option value="Tata Manza Aura Quadrajet BS IV"></option>
+                                <option value="Hyundai i10 Era 1.1 iTech SE"></option>
+                                <option value="Maruti Omni E MPI STD BS IV"></option>
+                                <option value="Honda City i-VTEC S"></option>
+                                <option value="Tata Indigo CR4"></option>
+                                <option value="Honda Amaze S Diesel"></option>
+                                <option value="Tata Manza Club Class Quadrajet90 LS"></option>
+                                <option value="Toyota Innova Crysta 2.8 GX AT 8S"></option>
+                                <option value="Mahindra Scorpio VLX 2WD AIRBAG BSIV"></option>
+                                <option value="Hyundai Santro Xing XG"></option>
+                                <option value="Maruti Vitara Brezza LDi"></option>
+                                <option value="Toyota Innova 2.5 ZX Diesel 7 Seater"></option>
+                                <option value="Ford Endeavour 2.5L 4X2"></option>
+                                <option value="Tata Bolt Quadrajet XE"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa AT SX Option"></option>
+                                <option value="Maruti Esteem Vxi - BSIII"></option>
+                                <option value="Ford Figo 2015-2019 1.2P Titanium MT"></option>
+                                <option value="Volkswagen Ameo 1.5 TDI Comfortline"></option>
+                                <option value="Mahindra Verito 1.5 D4 BSIV"></option>
+                                <option value="Audi Q3 2.0 TDI Quattro"></option>
+                                <option value="Ford Figo Aspire 1.2 Ti-VCT Trend"></option>
+                                <option value="Hyundai Verna VTVT 1.6 SX"></option>
+                                <option value="Volvo XC60 D5"></option>
+                                <option value="Fiat Linea Emotion"></option>
+                                <option value="BMW 3 Series 2005-2011 325i Sedan"></option>
+                                <option value="Honda Amaze S i-DTEC"></option>
+                                <option value="Mercedes-Benz R-Class R350 4Matic Long"></option>
+                                <option value="BMW 7 Series 730Ld"></option>
+                                <option value="BMW 3 Series 320d Sport"></option>
+                                <option value="Maruti SX4 S Cross DDiS 200 Zeta"></option>
+                                <option value="Maruti SX4 Green Vxi (CNG)"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa SX"></option>
+                                <option value="Land Rover Range Rover 2.2L Dynamic"></option>
+                                <option value="Jeep Compass 2.0 Limited 4X4"></option>
+                                <option value="Mercedes-Benz GLC 220d 4MATIC Style"></option>
+                                <option value="Mercedes-Benz M-Class ML 320 CDI"></option>
+                                <option value="Honda Accord 2.4 A/T"></option>
+                                <option value="Toyota Corolla Altis 1.4 DG"></option>
+                                <option value="Hyundai Santa Fe 2WD AT"></option>
+                                <option value="BMW 3 Series 320d GT Luxury Line"></option>
+                                <option value="Mahindra Scorpio 2.6 DX"></option>
+                                <option value="Nissan Micra XL"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa Base"></option>
+                                <option value="BMW 6 Series Gran Coupe"></option>
+                                <option value="Tata Indica V2 eLX"></option>
+                                <option value="Mercedes-Benz E-Class 2009-2013 E350 Petrol"></option>
+                                <option value="Hyundai Creta 1.4 E Plus Diesel"></option>
+                                <option value="Maruti 800 AC BSIII"></option>
+                                <option value="Maruti Swift Dzire 1.2 Lxi BSIV"></option>
+                                <option value="Maruti Alto LXi BSII"></option>
+                                <option value="Maruti Swift 1.3 LXI"></option>
+                                <option value="Honda Civic 2010-2013 1.8 S MT"></option>
+                                <option value="Honda Amaze E i-Dtech"></option>
+                                <option value="Hyundai Verna 1.6 CRDI AT SX Option"></option>
+                                <option value="Mercedes-Benz M-Class ML 350 CDI Corporate"></option>
+                                <option value="Honda City i VTEC CVT SV"></option>
+                                <option value="Maruti Zen Estilo LXI Green (CNG)"></option>
+                                <option value="Mini Cooper S Carbon Edition"></option>
+                                <option value="Hyundai Verna 1.6 SX VTVT AT"></option>
+                                <option value="Hyundai Grand i10 1.2 Kappa Magna AT"></option>
+                                <option value="Honda Amaze S i-VTEC"></option>
+                                <option value="Toyota Corolla Altis VL AT"></option>
+                                <option value="Honda Civic 2006-2010 1.8 S AT"></option>
+                                <option value="Honda City i DTEC VX Option"></option>
+                                <option value="Maruti Swift LXI"></option>
+                                <option value="Maruti Estilo LXI"></option>
+                                <option value="Mitsubishi Pajero 2.8 SFX"></option>
+                                <option value="Ford EcoSport 1.5 Ti VCT MT Titanium BE"></option>
+                                <option value="Maruti Ritz ZDi"></option>
+                                <option value="Hyundai Elite i20 Petrol Sportz"></option>
+                                <option value="Mahindra Thar CRDe AC"></option>
+                                <option value="Mahindra Scorpio M2DI"></option>
+                                <option value="Honda Civic 2010-2013 1.8 V MT"></option>
+                                <option value="Honda Brio E MT"></option>
+                                <option value="Mahindra Scorpio VLX 2WD BSIV"></option>
+                                <option value="Ford EcoSport 1.5 Ti VCT MT Titanium BSIV"></option>
+                                <option value="Mahindra Thar DI 4X4"></option>
+                                <option value="Skoda Rapid 1.6 MPI AT Style"></option>
+                                <option value="Force One LX 4x4"></option>
+                                <option value="Hyundai Santro Sportz BSIV"></option>
+                                <option value="Chevrolet Optra Magnum 1.6 LT ABS BS3"></option>
+                                <option value="Chevrolet Aveo 1.4"></option>
+                                <option value="Nissan Sunny Diesel XV"></option>
+                                <option value="Hyundai Grand i10 1.2 Kappa Sportz AT"></option>
+                                <option value="Audi A4 2.0 TDI 177 Bhp Technology Edition"></option>
+                                <option value="Maruti Eeco 7 Seater Standard BSIV"></option>
+                                <option value="Mini Cooper Countryman D High"></option>
+                                <option value="Mahindra Marazzo M8"></option>
+                                <option value="Porsche Cayenne Diesel"></option>
+                                <option value="Ford Fiesta 1.4 SXi TDCi"></option>
+                                <option value="Hyundai Tucson CRDi"></option>
+                                <option value="Toyota Etios Cross 1.4L VD"></option>
+                                <option value="Land Rover Discovery Sport TD4 HSE"></option>
+                                <option value="Hyundai Grand i10 1.2 CRDi Magna"></option>
+                                <option value="Maruti Alto 800 2016-2019 LXI Optional"></option>
+                                <option value="Tata Indica Vista Aura 1.3 Quadrajet"></option>
+                                <option value="Ford Fiesta 1.4 TDCi EXI"></option>
+                                <option value="Toyota Innova 2.5 VX (Diesel) 7 Seater BS IV"></option>
+                                <option value="Honda City i-DTEC SV"></option>
+                                <option value="Volkswagen Polo 1.2 MPI Highline Plus"></option>
+                                <option value="Skoda Rapid 1.6 MPI Elegance"></option>
+                                <option value="BMW 5 Series 2003-2012 530d Highline"></option>
+                                <option value="Land Rover Range Rover Evoque 2.0 TD4 Pure"></option>
+                                <option value="Mahindra NuvoSport N6"></option>
+                                <option value="Skoda Octavia Ambiente 1.9 TDI MT"></option>
+                                <option value="Audi A8 L 3.0 TDI quattro"></option>
+                                <option value="Mahindra Scorpio 2.6 LX"></option>
+                                <option value="Mahindra KUV 100 mFALCON D75 K6"></option>
+                                <option value="Maruti Esteem Vxi"></option>
+                                <option value="Toyota Innova 2.5 G3"></option>
+                                <option value="Ford EcoSport 1.5 Diesel Trend Plus BSIV"></option>
+                                <option value="Maruti Ciaz ZXi Option"></option>
+                                <option value="Mercedes-Benz CLA 200 Sport Edition"></option>
+                                <option value="Maruti 800 DX BSII"></option>
+                                <option value="Mini Cooper 3 DOOR S"></option>
+                                <option value="Tata Indigo eCS LX BSIV"></option>
+                                <option value="Tata Sumo CX"></option>
+                                <option value="Mercedes-Benz E-Class 220 CDI"></option>
+                                <option value="Maruti Celerio ZXI MT"></option>
+                                <option value="BMW 5 Series 2010-2013 525i"></option>
+                                <option value="Ford Endeavour 2.2 Trend MT 4X4"></option>
+                                <option value="Chevrolet Enjoy TCDi LS 8 Seater"></option>
+                                <option value="Maruti Ertiga LXI"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa S Option CNG"></option>
+                                <option value="Volkswagen Ameo 1.5 TDI Comfortline AT"></option>
+                                <option value="Tata Indigo CS eGLX BS IV"></option>
+                                <option value="Hyundai Verna 1.6 CRDi EX AT"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 CGI Elegance"></option>
+                                <option value="Maruti S Cross DDiS 200 Alpha"></option>
+                                <option value="Tata Xenon XT EX 4X2"></option>
+                                <option value="Mahindra XUV500 W8 1.99 mHawk"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 Kompressor Elegance MT"></option>
+                                <option value="Honda Amaze V CVT Petrol"></option>
+                                <option value="Maruti Baleno Alpha CVT"></option>
+                                <option value="Nissan Sunny XL"></option>
+                                <option value="Audi A4 35 TDI Technology"></option>
+                                <option value="Skoda Fabia 1.2 MPI Classic"></option>
+                                <option value="Ford EcoSport 1.5 Ti VCT AT Titanium BE"></option>
+                                <option value="Tata Nexon 1.5 Revotorq XZ Plus Dual Tone"></option>
+                                <option value="Hyundai Accent Executive CNG"></option>
+                                <option value="Hyundai Grand i10 SportZ Edition"></option>
+                                <option value="Volkswagen Vento Sport 1.2 TSI AT"></option>
+                                <option value="Hyundai i20 1.4 Asta CRDi with AVN"></option>
+                                <option value="Hyundai Creta 1.6 SX Automatic Diesel"></option>
+                                <option value="Hyundai i10 Asta Sunroof AT"></option>
+                                <option value="Volkswagen Vento Petrol Trendline"></option>
+                                <option value="Mahindra Scorpio 2.6 CRDe"></option>
+                                <option value="Maruti Swift VXI BSIII W/ ABS"></option>
+                                <option value="Maruti Swift Dzire VXi AT"></option>
+                                <option value="Maruti Ignis 1.2 Alpha"></option>
+                                <option value="Honda City i DTEC S"></option>
+                                <option value="Fiat Punto EVO 1.2 Emotion"></option>
+                                <option value="Renault Duster 110PS Diesel RXZ Option"></option>
+                                <option value="Honda Brio EX MT"></option>
+                                <option value="Nissan Sunny 2011-2014 XV"></option>
+                                <option value="Mahindra Scorpio VLX 2.2 mHawk BSIII"></option>
+                                <option value="Hyundai Creta 1.6 SX Option Executive"></option>
+                                <option value="Mahindra Bolero 2011-2019 ZLX BSIII"></option>
+                                <option value="Ford Figo Diesel LXI"></option>
+                                <option value="Ford Endeavour XLT TDCi 4X2"></option>
+                                <option value="Hyundai Verna CRDi ABS"></option>
+                                <option value="Mahindra Scorpio EX"></option>
+                                <option value="Mahindra Scorpio VLX 2.2 mHawk Airbag BSIV"></option>
+                                <option value="Maruti S-Cross 2017-2020 Zeta DDiS 200 SH"></option>
+                                <option value="Skoda Superb 2.8 V6 AT"></option>
+                                <option value="Hyundai Elite i20 Asta Option"></option>
+                                <option value="Honda City i VTEC S"></option>
+                                <option value="BMW 3 Series 330d Convertible"></option>
+                                <option value="Chevrolet Sail Hatchback Diesel"></option>
+                                <option value="Mitsubishi Cedia Sports"></option>
+                                <option value="Toyota Innova 2.0 GX 8 STR"></option>
+                                <option value="BMW 5 Series 520d Sport Line"></option>
+                                <option value="Audi Q5 2008-2012 2.0 TFSI Quattro"></option>
+                                <option value="Toyota Etios Liva GD SP"></option>
+                                <option value="Tata Zest Quadrajet 1.3 75PS XM"></option>
+                                <option value="Ford EcoSport 1.5 Petrol Titanium"></option>
+                                <option value="Maruti 800 DX"></option>
+                                <option value="Honda Mobilio V i DTEC"></option>
+                                <option value="Mahindra Xylo D4 BS III"></option>
+                                <option value="Volvo S60 D4 SUMMUM"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 CGI"></option>
+                                <option value="Audi Q7 35 TDI Quattro Premium Plus"></option>
+                                <option value="Honda City 1.5 V MT Sunroof"></option>
+                                <option value="Ford Figo Titanium Diesel"></option>
+                                <option value="Maruti Ciaz 1.4 AT Alpha"></option>
+                                <option value="Honda City V MT AVN"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 Avantgarde Edition C"></option>
+                                <option value="Maruti 800 AC Uniq"></option>
+                                <option value="Toyota Innova 2.5 ZX Diesel 7 Seater BSIII"></option>
+                                <option value="Renault Captur 1.5 Diesel Platine Mono"></option>
+                                <option value="Datsun GO NXT"></option>
+                                <option value="Toyota Etios Liva V"></option>
+                                <option value="Toyota Innova Crysta 2.4 ZX MT BSIV"></option>
+                                <option value="Hyundai Grand i10 CRDi Asta"></option>
+                                <option value="Ford Ecosport 1.5 Diesel Titanium"></option>
+                                <option value="Honda Accord 2001-2003 2.3 VTi L AT"></option>
+                                <option value="Mercedes-Benz CLA 200 D Sport Edition"></option>
+                                <option value="Toyota Corolla Altis JS MT"></option>
+                                <option value="Mahindra Scorpio 1.99 S4"></option>
+                                <option value="Tata Zest Quadrajet 1.3 XT"></option>
+                                <option value="Tata Nano Lx"></option>
+                                <option value="BMW X3 xDrive20d xLine"></option>
+                                <option value="Mahindra XUV500 AT W6 2WD"></option>
+                                <option value="Hyundai Xcent 1.2 CRDi E Plus"></option>
+                                <option value="Hyundai Verna 1.4 VTVT"></option>
+                                <option value="BMW X3 xDrive30d M Sport"></option>
+                                <option value="Mercedes-Benz S-Class 320 L"></option>
+                                <option value="Volkswagen Jetta 2007-2011 2.0 TDI Trendline"></option>
+                                <option value="Chevrolet Sail Hatchback 1.2 LS"></option>
+                                <option value="ISUZU D-MAX V-Cross 4X4"></option>
+                                <option value="Honda Jazz Select Edition"></option>
+                                <option value="Tata Safari Storme LX"></option>
+                                <option value="Hyundai Verna 1.6 CRDi EX MT"></option>
+                                <option value="Honda Amaze VX AT i-Vtech"></option>
+                                <option value="Mahindra Scorpio S10 4WD"></option>
+                                <option value="Maruti Swift Dzire Ldi BSIV"></option>
+                                <option value="Tata Safari Storme VX"></option>
+                                <option value="Honda WR-V i-DTEC VX"></option>
+                                <option value="Maruti Baleno LXI"></option>
+                                <option value="Maruti Eeco CNG 5 Seater AC BSIV"></option>
+                                <option value="Ford Figo Petrol EXI"></option>
+                                <option value="Tata Sumo Gold EX"></option>
+                                <option value="Maruti Wagon R LX BSII"></option>
+                                <option value="Skoda Rapid 1.6 MPI Ambition"></option>
+                                <option value="Tata Indica Vista Aqua 1.3 Quadrajet"></option>
+                                <option value="Maruti Swift LXI Option"></option>
+                                <option value="Fiat Punto 1.3 Emotion"></option>
+                                <option value="Audi TT 2.0 TFSI"></option>
+                                <option value="BMW 5 Series 523i Sedan"></option>
+                                <option value="Audi A7 2011-2015 3.0 TDI Quattro"></option>
+                                <option value="Honda Jazz 1.5 V i DTEC"></option>
+                                <option value="Honda WR-V i-VTEC S"></option>
+                                <option value="Skoda Octavia Ambition 1.4 TSI MT"></option>
+                                <option value="Honda City 1.5 V AT Exclusive"></option>
+                                <option value="Hyundai Accent GLS"></option>
+                                <option value="Maruti Alto 800 CNG LXI"></option>
+                                <option value="Mahindra Bolero 2011-2019 SLX 2WD BSIII"></option>
+                                <option value="Skoda Octavia 2.0 TDI AT Style Plus"></option>
+                                <option value="Mercedes-Benz S-Class 280 AT"></option>
+                                <option value="Volvo V40 Cross Country D3"></option>
+                                <option value="Hyundai i20 Asta 1.4 CRDi (Diesel)"></option>
+                                <option value="Maruti Swift Dzire AMT VXI"></option>
+                                <option value="Audi A4 35 TDI Technology Edition"></option>
+                                <option value="Skoda Superb Style 2.0 TDI AT"></option>
+                                <option value="BMW X1 M Sport sDrive 20d"></option>
+                                <option value="Tata Manza Aura Plus Quadrajet BS IV"></option>
+                                <option value="Hyundai Xcent 1.2 VTVT S"></option>
+                                <option value="Volkswagen Vento IPL II Petrol Highline AT"></option>
+                                <option value="Mini Cooper Countryman D"></option>
+                                <option value="Maruti Baleno Delta"></option>
+                                <option value="Hyundai i20 2015-2017 Sportz 1.2"></option>
+                                <option value="Mahindra Verito 1.5 D6 BSIV"></option>
+                                <option value="Audi A4 3.0 TDI Quattro Premium"></option>
+                                <option value="Honda Amaze V Petrol"></option>
+                                <option value="Maruti Ciaz 1.4 Zeta"></option>
+                                <option value="Hyundai Accent Executive"></option>
+                                <option value="Honda City i-DTEC ZX"></option>
+                                <option value="Mahindra XUV500 W8 AWD"></option>
+                                <option value="Maruti SX4 Zxi with Leather BSIII"></option>
+                                <option value="Maruti Wagon R LXI BSII"></option>
+                                <option value="Toyota Innova Crysta 2.4 GX MT"></option>
+                                <option value="Mahindra Xylo E8 ABS BS IV"></option>
+                                <option value="Maruti Baleno RS Petrol"></option>
+                                <option value="Volkswagen Ameo 1.2 MPI Highline Plus 16"></option>
+                                <option value="Ford Aspire Titanium Diesel"></option>
+                                <option value="Toyota Corolla Altis D-4D G"></option>
+                                <option value="Hyundai Verna Transform CRDi VGT SX ABS"></option>
+                                <option value="Maruti Swift LDI BSIV"></option>
+                                <option value="Volkswagen Polo GTI"></option>
+                                <option value="Renault Lodgy 110PS RxZ 8 Seater"></option>
+                                <option value="Ford Endeavour 2.2 Trend AT 4X2"></option>
+                                <option value="Toyota Platinum Etios 1.4 GXD"></option>
+                                <option value="Audi RS5 Coupe"></option>
+                                <option value="Mahindra Scorpio 2.6 SLX CRDe"></option>
+                                <option value="Honda WR-V i-DTEC S"></option>
+                                <option value="Ford Fiesta 1.4 ZXi TDCi ABS"></option>
+                                <option value="Renault KWID Climber 1.0 MT"></option>
+                                <option value="Ford Figo Aspire 1.2 Ti-VCT Titanium"></option>
+                                <option value="Hyundai Verna 1.6 VTVT S"></option>
+                                <option value="Hyundai Verna 1.6 EX VTVT"></option>
+                                <option value="Honda Accord VTi-L MT"></option>
+                                <option value="Ford Fiesta 1.5 TDCi Titanium"></option>
+                                <option value="Honda Jazz 1.5 SV i DTEC"></option>
+                                <option value="Maruti Wagon R AMT VXI Option"></option>
+                                <option value="Ford Freestyle Titanium Plus Petrol"></option>
+                                <option value="Chevrolet Enjoy Petrol LS 7 Seater"></option>
+                                <option value="Land Rover Range Rover Vogue SE 4.4 SDV8"></option>
+                                <option value="Mahindra Xylo E4"></option>
+                                <option value="Tata Indica Vista TDI LS"></option>
+                                <option value="Volkswagen Jetta 2007-2011 2.0 TDI Comfortline"></option>
+                                <option value="Fiat Avventura Power Up 1.3 Emotion"></option>
+                                <option value="Volvo S60 D4 Momentum"></option>
+                                <option value="Skoda Superb 3.6 V6 FSI"></option>
+                                <option value="Chevrolet Beat Diesel PS"></option>
+                                <option value="Mercedes-Benz SLC 43 AMG"></option>
+                                <option value="Toyota Innova Crysta 2.8 ZX AT BSIV"></option>
+                                <option value="Maruti Celerio X ZXI BSIV"></option>
+                                <option value="Audi A4 2.0 TDI Premium Sport Limited Edition"></option>
+                                <option value="Toyota Innova Crysta 2.4 GX MT 8S"></option>
+                                <option value="Ford Endeavour 2.2 Titanium AT 4X2"></option>
+                                <option value="Hyundai i20 1.4 Asta Option"></option>
+                                <option value="Toyota Etios Cross 1.4 GD"></option>
+                                <option value="BMW 3 Series 320d M Sport"></option>
+                                <option value="Honda BR-V i-VTEC S MT"></option>
+                                <option value="Ford Ecosport Signature Edition Diesel"></option>
+                                <option value="Tata Safari DICOR 2.2 EX 4x2"></option>
+                                <option value="Hyundai i20 2015-2017 Magna 1.2"></option>
+                                <option value="Ford Fiesta 1.4 SXi TDCi ABS"></option>
+                                <option value="Honda CR-V 2.0 AT"></option>
+                                <option value="Honda Jazz 1.2 S i VTEC"></option>
+                                <option value="Jaguar XJ 3.0L Portfolio"></option>
+                                <option value="Hyundai Tucson 2.0 e-VGT 2WD AT GLS"></option>
+                                <option value="Honda City 1.5 V AT Sunroof"></option>
+                                <option value="Hyundai Verna CRDi 1.6 SX"></option>
+                                <option value="Mercedes-Benz A Class A180 Sport"></option>
+                                <option value="Hyundai Verna 1.6 CRDi AT SX"></option>
+                                <option value="Tata Nexon 1.5 Revotorq XZ Plus"></option>
+                                <option value="Maruti Ciaz 1.3 S"></option>
+                                <option value="Maruti Ritz ZXi"></option>
+                                <option value="Hyundai i20 Asta (o) 1.4 CRDi (Diesel)"></option>
+                                <option value="Audi A6 35 TFSI Matrix"></option>
+                                <option value="Mahindra Xylo E4 ABS BS III"></option>
+                                <option value="BMW 7 Series 740Li"></option>
+                                <option value="Tata Manza Aqua Safire"></option>
+                                <option value="Hyundai i20 Sportz Petrol"></option>
+                                <option value="Maruti Zen VXI BSII"></option>
+                                <option value="Toyota Etios Liva 1.4 GD"></option>
+                                <option value="Fiat Linea Emotion Pack (Diesel)"></option>
+                                <option value="Honda Brio S Option AT"></option>
+                                <option value="Maruti Zen D"></option>
+                                <option value="Mahindra Scorpio 1.99 S10 4WD"></option>
+                                <option value="Mercedes-Benz New C-Class C 200 AVANTGARDE"></option>
+                                <option value="Chevrolet Enjoy TCDi LTZ 7 Seater"></option>
+                                <option value="Hyundai Creta 1.4 CRDi S"></option>
+                                <option value="Mahindra Scorpio S6 7 Seater"></option>
+                                <option value="Hyundai Santro Xing XG eRLX Euro III"></option>
+                                <option value="Mercedes-Benz New C-Class 200 K AT"></option>
+                                <option value="Hyundai Santro GLS I - Euro I"></option>
+                                <option value="Audi Q7 3.0 TDI Quattro"></option>
+                                <option value="Hyundai Creta 1.4 CRDi S Plus"></option>
+                                <option value="Hyundai EON D Lite Plus Option"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa SX Option"></option>
+                                <option value="Chevrolet Aveo 1.4 LS"></option>
+                                <option value="Toyota Innova 2.5 Z Diesel 7 Seater"></option>
+                                <option value="Skoda Laura 1.9 TDI MT Ambiente"></option>
+                                <option value="Skoda Laura Ambition 2.0 TDI CR AT"></option>
+                                <option value="Toyota Corolla H5"></option>
+                                <option value="Ford Figo Aspire 1.5 TDCi Titanium"></option>
+                                <option value="Mercedes-Benz CLA 200 CGI Sport"></option>
+                                <option value="Nissan Terrano XL Plus 85 PS"></option>
+                                <option value="Maruti Alto Green LXi (CNG)"></option>
+                                <option value="BMW X6 xDrive 40d M Sport"></option>
+                                <option value="Hyundai i20 Active 1.2 SX Dual Tone"></option>
+                                <option value="BMW 1 Series 118d Base"></option>
+                                <option value="Maruti Vitara Brezza ZDi Plus AMT Dual Tone"></option>
+                                <option value="Audi A6 2011-2015 35 TFSI Technology"></option>
+                                <option value="Hyundai Grand i10 CRDi SportZ Edition"></option>
+                                <option value="Tata Tiago AMT 1.2 Revotron XZA"></option>
+                                <option value="Hyundai Verna 1.4 CRDi"></option>
+                                <option value="Maruti Ciaz 1.4 Delta"></option>
+                                <option value="Maruti Celerio LXI"></option>
+                                <option value="Maruti Zen Estilo 1.1 LX BSIII"></option>
+                                <option value="Renault KWID 1.0 RXL"></option>
+                                <option value="Audi A4 3.0 TDI Quattro"></option>
+                                <option value="Nissan Micra Active XV"></option>
+                                <option value="Hyundai Verna VTVT 1.6 AT SX Option"></option>
+                                <option value="Maruti Zen Estilo 1.1 LXI BSIII"></option>
+                                <option value="Mercedes-Benz SLK-Class SLK 350"></option>
+                                <option value="Ford Fiesta 1.4 Duratec EXI"></option>
+                                <option value="Mahindra XUV500 W11 Option BSIV"></option>
+                                <option value="Mahindra TUV 300 T8 AMT"></option>
+                                <option value="Skoda Yeti Elegance"></option>
+                                <option value="Land Rover Range Rover Evoque 2.0 TD4 HSE Dynamic"></option>
+                                <option value="Toyota Innova 2.5 GX (Diesel) 7 Seater BS IV"></option>
+                                <option value="Maruti Dzire AMT ZXI Plus"></option>
+                                <option value="Hyundai Verna VTVT 1.6 AT SX Plus"></option>
+                                <option value="Toyota Etios VXD"></option>
+                                <option value="Hyundai i20 Asta Optional with Sunroof 1.2"></option>
+                                <option value="Ford Ecosport 1.0 Ecoboost Platinum Edition"></option>
+                                <option value="Hyundai Verna 1.6 VTVT EX AT"></option>
+                                <option value="Hyundai i20 1.4 Asta (AT)"></option>
+                                <option value="Nissan X-Trail SLX MT"></option>
+                                <option value="Jeep Compass 2.0 Sport"></option>
+                                <option value="Ford EcoSport 1.5 TDCi Trend"></option>
+                                <option value="Maruti Swift VDi BSIII W/ ABS"></option>
+                                <option value="Mahindra KUV 100 mFALCON G80 K2"></option>
+                                <option value="Audi Q3 30 TDI Premium FWD"></option>
+                                <option value="Tata Indigo eCS eLX BS IV"></option>
+                                <option value="Mercedes-Benz GLA Class 200 d Sport"></option>
+                                <option value="Chevrolet Captiva LT"></option>
+                                <option value="Mahindra Bolero Power Plus SLE"></option>
+                                <option value="Land Rover Discovery Sport SD4 HSE Luxury 7S"></option>
+                                <option value="Toyota Corolla Altis D-4D GL"></option>
+                                <option value="Mitsubishi Pajero 2.8 GLX CRZ"></option>
+                                <option value="Hyundai Xcent 1.1 CRDi SX Option"></option>
+                                <option value="Jaguar XF 2.2 Litre Executive"></option>
+                                <option value="Chevrolet Enjoy 1.3 TCDi LTZ 8"></option>
+                                <option value="Maruti Swift LDI Optional"></option>
+                                <option value="Hyundai Grand i10 Magna AT       BMW X5 X5 M"></option>
+                                <option value="Tata Hexa XT"></option>
+                                <option value="Volkswagen Vento 1.5 TDI Comfortline AT"></option>
+                                <option value="Maruti Ignis 1.2 Delta"></option>
+                                <option value="Mahindra Bolero SLE"></option>
+                                <option value="Maruti Ertiga SHVS ZDI"></option>
+                                <option value="Ford Figo 1.5D Base MT"></option>
+                                <option value="Tata Indigo CS LS (TDI) BS-III"></option>
+                                <option value="Ford Figo 2015-2019 1.2P Titanium Opt MT"></option>
+                                <option value="Renault KWID Climber 1.0 AMT"></option>
+                                <option value="Mercedes-Benz New C-Class 200 CDI Classic"></option>
+                                <option value="Mahindra Scorpio VLS AT 2.2 mHAWK"></option>
+                                <option value="Nissan Terrano XL 85 PS"></option>
+                                <option value="Tata Indigo CS Emax CNG GLX"></option>
+                                <option value="Skoda Laura Elegance 2.0 TDI CR AT"></option>
+                                <option value="Toyota Corolla Altis GL MT"></option>
+                                <option value="Maruti Grand Vitara 2.4 MT"></option>
+                                <option value="Mitsubishi Outlander 2.4"></option>
+                                <option value="Honda CR-V 2.0L 2WD AT"></option>
+                                <option value="Maruti Alto LX BSIII"></option>
+                                <option value="Nissan Terrano XV D Pre"></option>
+                                <option value="BMW X3 xDrive 20d Luxury Line"></option>
+                                <option value="Maruti Eeco CNG HTR 5-STR"></option>
+                                <option value="Maruti Wagon R VXI BS IV with ABS"></option>
+                                <option value="Audi Q3 2012-2015 35 TDI Quattro Premium"></option>
+                                <option value="Honda Accord 2.4 Elegance M/T"></option>
+                                <option value="Honda CR-V 2.4L 4WD MT"></option>
+                                <option value="Skoda Fabia 1.2 MPI Ambition Plus"></option>
+                                <option value="Tata Manza ELAN Quadrajet BS IV"></option>
+                                <option value="Maruti Wagon R Stingray VXI"></option>
+                                <option value="Hyundai i10 Magna Optional 1.1L"></option>
+                                <option value="Land Rover Discovery Sport TD4 HSE 7S"></option>
+                                <option value="Maruti Ciaz VDi Plus"></option>
+                                <option value="Audi Q5 3.0 TDI Quattro"></option>
+                                <option value="Mahindra Xylo E4 BS III"></option>
+                                <option value="Maruti Celerio CNG VXI MT"></option>
+                                <option value="Maruti A-Star AT VXI"></option>
+                                <option value="Mahindra Bolero SLX 2WD"></option>
+                                <option value="Maruti SX4 S Cross 2015-2017 DDiS 200 Zeta"></option>
+                                <option value="Audi Q5 30 TDI quattro Premium"></option>
+                                <option value="Honda CR-V RVi MT"></option>
+                                <option value="Maruti Eeco 5 Seater AC BSIV"></option>
+                                <option value="Tata Indica V2 DLS TC"></option>
+                                <option value="Hyundai Creta 1.6 VTVT E Plus"></option>
+                                <option value="Volkswagen Vento 1.5 Highline Plus AT 16 Alloy"></option>
+                                <option value="BMW 5 Series 530d M Sport"></option>
+                                <option value="Toyota Corolla Altis 1.8 Sport"></option>
+                                <option value="Maruti Wagon R VXI Plus"></option>
+                                <option value="Mercedes-Benz E-Class 2015-2017 E350 CDI Avantgrade"></option>
+                                <option value="Tata Bolt Quadrajet XM"></option>
+                                <option value="Maruti Ciaz 1.4 Alpha"></option>
+                                <option value="Mercedes-Benz GLA Class 200 Sport Edition"></option>
+                                <option value="Mahindra Scorpio S8 8 Seater"></option>
+                                <option value="Hyundai Verna CRDi 1.6 AT SX Plus"></option>
+                                <option value="Maruti Alto Std"></option>
+                                <option value="Mahindra NuvoSport N8"></option>
+                                <option value="Hyundai EON 1.0 Era Plus"></option>
+                                <option value="Tata Indica V2 DLE BSIII"></option>
+                                <option value="Tata Nano Lx BSIV"></option>
+                                <option value="Mercedes-Benz E-Class E270 CDI"></option>
+                                <option value="Mercedes-Benz E-Class Facelift"></option>
+                                <option value="Mahindra Logan Petrol 1.4 GLE"></option>
+                                <option value="Hyundai Xcent 1.2 Kappa AT S Option"></option>
+                                <option value="Skoda Yeti Ambition 4X2"></option>
+                                <option value="Maruti Ciaz Alpha"></option>
+                                <option value="Tata Indigo GLE"></option>
+                                <option value="Fiat Linea Emotion (Diesel)"></option>
+                                <option value="Land Rover Freelander 2 HSE"></option>
+                                <option value="Volvo S60 D4 KINETIC"></option>
+                                <option value="Ford Figo 2015-2019 1.5D Titanium MT"></option>
+                                <option value="Ford Fiesta 1.4 Duratec ZXI"></option>
+                                <option value="Hyundai Verna CRDi 1.6 AT SX Option"></option>
+                                <option value="Tata Manza Aqua Quadrajet BS IV"></option>
+                                <option value="Maruti SX4 VDI"></option>
+                                <option value="Tata Tigor 1.2 Revotron XT"></option>
+                                <option value="Jaguar XE 2.0L Diesel Prestige"></option>
+                                <option value="Skoda Fabia 1.2 MPI Ambiente Petrol"></option>
+                                <option value="Mahindra Quanto C8"></option>
+                                <option value="Ford EcoSport 1.5 Diesel Titanium Plus"></option>
+                                <option value="Ford Figo Aspire 1.2 Ti-VCT Ambiente"></option>
+                                <option value="Maruti Wagon R VXI Minor"></option>
+                                <option value="Tata Safari Storme 2012-2015 VX"></option>
+                                <option value="Tata Nano XT"></option>
+                                <option value="Mercedes-Benz New C-Class 200 Kompressor"></option>
+                                <option value="Toyota Fortuner 4x4 MT TRD Sportivo"></option>
+                                <option value="Honda Amaze EX i-Dtech"></option>
+                                <option value="Honda City i DTec VX"></option>
+                                <option value="Hyundai Grand i10 CRDi Sportz Celebration Edition"></option>
+                                <option value="Honda City Corporate Edition"></option>
+                                <option value="Skoda Rapid 1.6 MPI Ambition With Alloy Wheel"></option>
+                                <option value="Land Rover Range Rover 3.0 D"></option>
+                                <option value="Renault KWID 1.0 RXT Optional AMT"></option>
+                                <option value="Land Rover Range Rover Sport SE"></option>
+                                <option value="Skoda Laura Ambiente 2.0 TDI CR MT"></option>
+                                <option value="Hyundai i20 Sportz Option Diesel"></option>
+                                <option value="Mercedes-Benz GLC 220"></option>
+                                <option value="Ford Figo Diesel Celebration Edition"></option>
+                                <option value="Ford Fiesta Classic 1.4 Duratorq LXI"></option>
+                                <option value="Maruti Swift DDiS ZDI Plus"></option>
+                                <option value="Renault Duster 85PS Diesel RxL Explore"></option>
+                                <option value="Toyota Corolla Altis D-4D J"></option>
+                                <option value="Hyundai i20 Active 1.2 SX"></option>
+                                <option value="Skoda Octavia Ambition 2.0 TDI AT"></option>
+                                <option value="Hyundai Grand i10 1.2 CRDi Sportz Option"></option>
+                                <option value="Volkswagen Jetta 2012-2014 2.0L TDI Comfortline"></option>
+                                <option value="Mercedes-Benz E-Class 230 E AT"></option>
+                                <option value="Hyundai Verna 1.4 EX"></option>
+                                <option value="Isuzu MUX 2WD"></option>
+                                <option value="Chevrolet Aveo U-VA 1.2 LT"></option>
+                            </datalist>
+                            <input type="number" class="inpt it" name="year" placeholder="year" required>
+                            <input type="number" class="inpt" name="kilometers_driven" placeholder="kilometers_driven"
+                                required>
+                            <select name="fuel_type" aria-label="Default fuel_type" class="inpt" required>
+                                <option disabled selected>Fuel_type</option>
+                                <option value="0">Diesel</option>
+                                <option value="1">Petrol</option>
+                                <option value="2">CNG</option>
+                            </select>
+                            <select name="transmission" aria-label="Default transmission" class="inpt" required>
+                                <option disabled selected>Transmission</option>
+                                <option value="0">Manual</option>
+                                <option value="1">Automatic</option>
+                            </select>
+                            <select name="owner_type" aria-label="Default owner_type" class="inpt" required>
+                                <option disabled selected>Owner_type</option>
+                                <option value="0">First_Owner</option>
+                                <option value="1">Second_Owner</option>
+                                <option value="3">Third_Owner</option>
+                                <option value="4">Fourth_Owner</option>
+                            </select>
+
+                            <input type="number" class="inpt" name="mileage" placeholder="mileage" required>
+
+                            <input type="number" class="inpt" name="engine" placeholder="engine" required>
+                            <select name="seats" aria-label="Default seats" class="inpt" required>
+                                <option disabled selected>Seats</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+
+                            <div class="btn">
+                                <button type="submit" class="btn2 register">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <style>
+            .team {
+                width: 100%;
+                min-height: 100vh;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .team h1 {
+                color: #eee;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                font-size: 2.3em;
+                margin-bottom: 80px;
+                top: 50%;
+            }
+
+            .team .container {
+                position: relative;
+                display: flex;
+                padding-left: 350px;
+            }
+
+            .team .card {
+                position: relative;
+                background-color: #1a1720;
+                height: 300px;
+                width: 200px;
+                border-radius: 12px;
+                box-shadow: -16px 0 48px #000;
+                left: 0;
+                margin-left: -40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s;
+            }
+
+            .team figure {
+                position: relative;
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-bottom: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                background: linear-gradient(to top,
+                        #009ad9, #ffba00);
+            }
+
+            .team figure img {
+                width: 100%;
+                transition: 0.4s;
+            }
+
+            .team .name {
+                font-size: 1.1em;
+                margin-bottom: 8px;
+            }
+
+            .team .role {
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+
+            .team .separator {
+                margin: 16px;
+                height: 5px;
+                width: 60px;
+                background-color: #2e3033;
+                position: relative;
+                transition: 0.4s;
+            }
+
+            .team.social-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .team .social-container button {
+                cursor: pointer;
+                background: none;
+                border: 2px solid;
+                border-radius: 8px;
+                width: 26px;
+                height: 26px;
+                font-size: 0.8em;
+                margin: 8px;
+            }
+
+            /* ----  Card hover ---- */
+
+            .team .card:hover {
+                transform: translateY(-15px);
+                transition: 0.4s;
+            }
+
+            .team .card:hover~.card {
+                left: 40px;
+                transition: 0.4s;
+            }
+
+            .team .card:hover figure img {
+                opacity: 0.75;
+            }
+
+            .team .card:hover * {
+                color: #fff;
+            }
+
+            .team .card:hover .separator::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, #009ad9, #ffba00);
+                animation: widthAnimation 0.4s;
+            }
+
+            @keyframes widthAnimation {
+                from {
+                    width: 0px;
+                }
+
+                to {
+                    width: 60px;
+                }
+            }
+
+            @media screen and (max-width:781px) {
+                .team .container {
+                    padding-left: 50px;
+                }
+
+                .team h1 {
+                    padding-right: 30px;
+                }
+            }
+        </style>
+
+        <section class="team">
+            <h1>Our Great Team</h1>
+            <div class="container">
+                <div class="card">
+                    <figure>
+                        <img src="{% static 'img/front.jpg' %}" alt="Profile image">
+                    </figure>
+                    <p class="name">Marc Doe</p>
+                    <p class="role">Frontend dev</p>
+                    <div class="separator"></div>
+                    <div class="social-container">
+                        <button>
+                            <i class="fab fa-github"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="{% static 'img/img13.jpg' %}" alt="Profile image">
+                    </figure>
+                    <p class="name">Greta Lee</p>
+                    <p class="role">Backend dev</p>
+                    <div class="separator"></div>
+                    <div class="social-container">
+                        <button>
+                            <i class="fab fa-github"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-linkedin-in"></i>
+                        </button>
+                        <button>
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer>
+            <h1>Leica 2020</h1>
+            <ul>
+                <li>
+                    <a href="#"><img src="{% static 'img/yt-logo.png' %}" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/twitter-logo.png' %}" alt="" /></a>
+                </li>
+                <li>
+                    <a href="#"><img src="{% static 'img/instagram-logo.png' %}" alt="" /></a>
+                </li>
+            </ul>
+        </footer>
+
+    </main>
+
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

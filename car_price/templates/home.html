@@ -1,0 +1,717 @@
+<!-- 
+Credit : LearnDesign
+Youtube Channel : https://youtube.com/learndesigntutorial
+Email : help.learndesign@gmail.com
+For Support : https://www.patreon.com/helplearndesign
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    <style>
+        * {
+            margin: 0;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: Space Grotesk;
+            background-color: #1E1F31;
+            overflow-x: hidden;
+        }
+
+        .wrapper {
+            position: relative;
+            /* height: 100vh; */
+            overflow: hidden;
+        }
+
+        header {
+            position: relative;
+            padding: 50px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        header ul li a {
+            color: #aba9b4;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all ease 0.5s;
+        }
+
+        header ul li a:hover {
+            color: #f09053;
+        }
+
+        header ul li a.btn {
+            display: inline-block;
+            width: 180px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #f09053;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: all ease 0.5s;
+        }
+
+        header ul li a.btn:hover {
+            background-color: #615c59;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px 100px 0;
+            margin-top: 3rem;
+            margin-bottom: 8rem;
+        }
+
+        .text {
+            width: 50%;
+            padding-right: 150px;
+        }
+
+        .text p {
+            font-size: 28px;
+            line-height: 46px;
+            color: #fff;
+        }
+
+        .text p span {
+            color: #f09053;
+        }
+
+        .text a {
+            position: relative;
+            display: inline-block;
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            padding: 18px 30px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-top: 60px;
+        }
+
+        .text a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            background-color: #f09053;
+            z-index: -1;
+            transition: all ease 0.5s;
+        }
+
+        .text a:hover:before {
+            width: 100%;
+        }
+
+        .img {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(520px, #f08f538c, transparent 50%);
+            /* margin-top: -50px; */
+            margin: -50px auto 0 auto;
+        }
+
+        .email-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-icons {
+            height: 100%;
+            animation: rotation 10s linear infinite;
+        }
+
+        @keyframes rotation {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .social-icons img {
+            position: absolute;
+        }
+
+        .social-icons img:nth-child(1) {
+            top: 0;
+            left: 42%;
+        }
+
+        .social-icons img:nth-child(2) {
+            top: 25%;
+            right: 0;
+        }
+
+        .social-icons img:nth-child(3) {
+            top: 70%;
+            left: 70%;
+        }
+
+        .social-icons img:nth-child(4) {
+            top: 25%;
+            left: 0;
+        }
+
+        .social-icons img:nth-child(5) {
+            top: 70%;
+            left: 10%;
+        }
+
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+        }
+
+        .wave:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("/static/img/homepage img/images/wave.svg") repeat-x;
+            background-size: cover;
+            background-position: -1000px 0;
+            opacity: .2;
+            animation: waveOne 60s linear infinite;
+        }
+
+        @keyframes waveOne {
+            50% {
+                background-position: 0 0;
+            }
+        }
+
+        .wave:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("/static/img/homepage img/images/wave.svg") repeat-x;
+            background-size: cover;
+            background-position: 2732px 0;
+            opacity: .3;
+            animation: waveOne 120s linear infinite;
+        }
+
+
+        /*SUBMENU*/
+        ul ul {
+            max-width: 250px;
+            position: absolute;
+            padding: 10px 0;
+            opacity: 0;
+            z-index: -9999;
+            transition: all ease 0.5s;
+        }
+
+        ul li:hover ul {
+            opacity: 1;
+            z-index: 9;
+            padding: 30px 0;
+        }
+
+        ul ul li {
+            margin: 0;
+            width: 100%;
+        }
+
+        ul ul li a {
+            width: 100%;
+            display: inline-block;
+            padding: 20px;
+            background-color: #383a58;
+            color: #fff;
+        }
+
+        ul ul li:first-child a {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        ul ul li:last-child a {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        ul ul li a:hover {
+            background-color: #f09053;
+            color: #fff;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main1">
+        <div class="ntext">
+          Creative
+        </div>
+        <div class="title">
+          VR TechSolution
+        </div>
+        <div class="bar">
+          <div id="fill">
+          </div>
+        </div>
+      </div>
+    
+      <style>
+        .main1 {
+          width: 100%;
+          height: 100vh;
+          background: linear-gradient(80deg, #110e1f, #1b1730);
+          position: fixed;
+          top: 0px;
+          left: 0px;
+          z-index: 9999;
+        }
+    
+        @font-face {
+          font-family: Gloss And Bloom;
+          src: url('/static/img/homepage img/Gloss_And_Bloom.ttf');
+        }
+    
+        .ntext {
+          width: 100%;
+          height: 100vh;
+          background-image: url("/static/img/homepage img/back/back.jpg");
+          background-position: center;
+          font-family: Gloss And Bloom;
+          font-size: 80px;
+          text-align: center;
+          line-height: 650px;
+          position: absolute;
+          top: 58%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-5deg);
+          color: #d2006b;
+          -webkit-background-clip: text;
+          pointer-events: none;
+          animation: animl 1s infinite, anim2 10s forwards;
+        }
+    
+        @keyframes animl {
+          0% {
+            background-image: url("/static/img/homepage img/back/back1.jpg");
+          }
+    
+          10% {
+            background-image: url("/static/img/homepage img/back/back2.jpg");
+          }
+    
+          20% {
+            background-image: url("/static/img/homepage img/back/back3.jpg");
+          }
+    
+          30% {
+            background-image: url("/static/img/homepage img/back/back4.jpg");
+          }
+    
+          40% {
+            background-image: url("/static/img/homepage img/back/back5.jpg");
+          }
+    
+          50% {
+            background-image: url("/static/img/homepage img/back/back6.jpg");
+          }
+    
+          60% {
+            background-image: url("/static/img/homepage img/back/back7.jpg");
+          }
+    
+          70% {
+            background-image: url("/static/img/homepage img/back/back8.jpg");
+          }
+    
+          80% {
+            background-image: url("/static/img/homepage img/back/back9.jpg");
+          }
+    
+          90% {
+            background-image: url("/static/img/homepage img/back/back10.jpg");
+          }
+    
+          100% {
+            background-image: url("/static/img/homepage img/back/back11.jpg");
+          }
+        }
+    
+        @keyframes anim2 {
+          from {
+            color: #d2006b;
+          }
+    
+          to {
+            color: transparent;
+          }
+        }
+    
+        .title {
+          font-family: monospace;
+          font-size: 12px;
+          color: white;
+          letter-spacing: 5px;
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+    
+        .bar {
+          width: 80px;
+          height: 2px;
+          background-color: #282246;
+          position: absolute;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 999;
+        }
+    
+        #fill {
+          width: 0%;
+          height: 100%;
+          background-color: white;
+          position: relative;
+          top: 0px;
+          left: 0px;
+        }
+      </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+      <script type="text/javascript">
+        var progress = 0;
+        document.onreadystatechange=function()
+        {
+          if(document.readyState=="interactive")
+          {
+            var allElement =$("*");
+            var length = allElement.length;
+            for(var i=0;i<length;i++)
+            {
+              set_element(allElement[i],length);
+            }
+          }
+        }
+        function set_element(element,totalElement)
+        {
+          var percetage = 100/ totalElement;
+          if($(element).length==1)
+          {
+            $("#fill").animate({width:progress+percetage+"%"},1000,function()
+            {
+              if(document.getElementById("fill").style.width=="100%")
+              {
+                $(".main1").fadeOut(500);
+              }
+            });
+            progress = progress+percetage;
+    
+          }
+        }
+      </script> 
+      <!-- preloader -->
+    <div class="wrapper">
+        <header>
+            <!-- <video src="./VID-20210302-WA0002.mp4" muted="" autoplay=""></video> -->
+            <h3>
+                <span>V</span>
+                <span>R</span>
+                <span>T</span>
+                <span>E</span>
+                <span>C</span>
+                <span>H</span>
+                <span>S</span>
+                <span>O</span>
+                <span>L</span>
+                <span>U</span>
+                <span>T</span>
+                <span>I</span>
+                <span>O</span>
+                <span>N</span>
+            </h3>
+            <style>
+                h3 {
+                    font-size: 1.6rem;
+                    color: #333;
+                    width: 345px;
+                }
+
+                h3 span {
+                    animation: animate 1s linear infinite;
+                }
+
+                h3 span:nth-child(1) {
+                    animation-delay: 0s;
+                }
+
+                h3 span:nth-child(2) {
+                    animation-delay: 0.2s;
+                }
+
+                h3 span:nth-child(3) {
+                    animation-delay: 0.4s;
+                }
+
+                h3 span:nth-child(4) {
+                    animation-delay: 0.6s;
+                }
+
+                h3 span:nth-child(5) {
+                    animation-delay: 0.8s;
+                }
+
+                h3 span:nth-child(6) {
+                    animation-delay: 1s;
+                }
+
+                h3 span:nth-child(7) {
+                    animation-delay: 1.2s;
+                }
+
+                h3 span:nth-child(8) {
+                    animation-delay: 1.4s;
+                }
+
+                h3 span:nth-child(9) {
+                    animation-delay: 1.6s;
+                }
+                h3 span:nth-child(10) {
+                    animation-delay: 1.8s;
+                }
+                h3 span:nth-child(11) {
+                    animation-delay: 2.0s;
+                }
+                h3 span:nth-child(12) {
+                    animation-delay: 2.2s;
+                }
+                h3 span:nth-child(13) {
+                    animation-delay: 2.4s;
+                }
+                h3 span:nth-child(14) {
+                    animation-delay: 2.6s;
+                }
+                
+                h3 span:nth-child(15) {
+                    animation-delay: 2.8s;
+                }
+                h3 span:nth-child(16) {
+                    animation-delay: 3.0s;
+                }
+                @keyframes animate {
+
+                    0%,
+                    80% {
+                        color: #333;
+                        text-shadow: none;
+                    }
+
+                    100% {
+                        color: #fff;
+                        text-shadow: 0 0 10px #fff,
+                            0 0 20px #fff,
+                            0 0 40px #fff,
+                            0 0 80px #fff,
+                            0 0 120px #fff,
+                            0 0 160px #fff;
+                    }
+                }
+            </style>
+            <nav>
+                <ul>
+                    <li><a class="btn" href="{% url 'signup&in' %}">Sign Up</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="img">
+                <div class="social-icons">
+                    <img src="{% static 'img/homepage img/images/social-icon1.png' %}" alt="">
+                    <img src="{% static 'img/homepage img/images/social-icon2.png' %}" alt="">
+                    <img src="{% static 'img/homepage img/images/social-icon3.png' %}" alt="">
+                    <img src="{% static 'img/homepage img/images/social-icon4.png' %}" alt="">
+                    <img src="{% static 'img/homepage img/images/social-icon5.png' %}" alt="">
+                </div>
+                <img class="email-icon" src="{% static 'img/homepage img/images/email-icon.png' %}" alt="">
+            </div>
+            
+
+        </div>
+
+
+        <div class="wave">
+            <img src="{% static 'img/homepage img/images/wave.svg' %}" alt="">
+        </div>
+
+    </div>
+
+    <style>
+        @media screen and (max-width:410px) {
+
+            header {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 2rem;
+            }
+
+            header ul li a.btn {
+                position: absolute;
+                width: 240px;
+                margin-top: 1rem 0;
+                left: 20%;
+                font-size: 1.5rem;
+            }
+
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0;
+                margin-top: 6rem;
+                margin-bottom: 21rem;
+            }
+
+            .email-icon {
+                width: 6.9rem;
+            }
+
+            .social-icons img:nth-child(1) {
+                top: 15%;
+                left: 37%;
+            }
+
+            .social-icons img:nth-child(2) {
+                top: 33%;
+                right: 3%;
+            }
+
+            .social-icons img:nth-child(3) {
+                top: 59%;
+                left: 61%;
+            }
+
+            .social-icons img:nth-child(4) {
+                top: 31%;
+                left: 5%;
+            }
+
+            .social-icons img:nth-child(5) {
+                top: 61%;
+                left: 14%;
+            }
+        }
+
+        @media screen and (min-width:410px) and (max-width:500px) {
+
+            header {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 2rem;
+            }
+
+            header ul li a.btn {
+                position: absolute;
+                width: 240px;
+                margin-top: 1rem 0;
+                left: 20%;
+                font-size: 1.5rem;
+            }
+
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0;
+                margin-top: 6rem;
+                margin-bottom: 21rem;
+            }
+
+            .email-icon {
+                width: 7.3rem;
+            }
+
+
+
+
+            .social-icons img:nth-child(1) {
+                top: 10%;
+                left: 37%;
+            }
+
+            .social-icons img:nth-child(2) {
+                top: 33%;
+                right: 3%;
+            }
+
+            .social-icons img:nth-child(3) {
+                top: 65%;
+                left: 62%;
+            }
+
+            .social-icons img:nth-child(4) {
+                top: 31%;
+                left: 5%;
+            }
+
+            .social-icons img:nth-child(5) {
+                top: 63%;
+                left: 14%;
+            }
+        }
+
+        @media screen and (min-width:501px) and (max-width:767px) {
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0;
+                margin-top: 6rem;
+                margin-bottom: 21rem;
+            }
+        }
+    </style>
+</body>
+
+</html>

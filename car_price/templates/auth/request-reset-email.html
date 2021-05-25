@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/signup&in css/style.css' %}" />
+    <title>Set New password</title>
+    <style>
+        @media (min-width: 790px) {
+        .signin-signup {
+            top: 80%;
+        }
+    }
+        @media (max-width: 1100px){ 
+        .signin-signup {
+            top: 80%;
+        }
+        .signin-signup {
+            top: 80%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="{% url 'request-reset-email' %}" method="post">
+                    {% csrf_token %}
+                    <h2 class="title">Set your preffered Password</h2>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="email" name="email" value="{{data.email}}" placeholder="Email" />
+                    </div>
+                    <input type="submit" value="Submit" class="btn" />
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here ?</h3>
+                    {% if messages %}
+                    {% for message in messages %}
+                    <small {% if messages.tags %} class="{{messages.tags}}" {% endif %}>
+                        <h4>{{message}}</h4>
+                    </small>
+                    {% endfor %}
+                    {% endif %}
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                        ex ratione. Aliquid!
+                    </p>
+                </div>
+                <img src="{% static 'img/signup&inpage img/log.svg' %}" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/signup&in js/app.js' %}"></script>
+    <p>
+        Already have an account?<a href="{%url 'login'%}">Login</a>
+    </p>
+
+</body>
+
+</html>

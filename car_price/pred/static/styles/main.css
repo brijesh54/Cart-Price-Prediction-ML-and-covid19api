@@ -1,0 +1,2148 @@
+*{
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+.no {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 46px;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, .7), 5px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.border {
+    height: auto;
+    margin: auto;
+    margin-top: 5rem;
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.autorotate {
+    width: 96.5%;
+    display: block;
+    padding: 5px;
+    background-color: tomato;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.not {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+@media screen and (max-width:321px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 84vh !important;
+  }
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 255px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 233px !important;
+    height: 126px !important;
+  }
+  .feature .container .card button {
+    right: 1px !important;
+    bottom: 1px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .feature .container .card h2 {
+    right: 36px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 26px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 2px !important;
+    bottom: 2px !important;
+    font-size: 18px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 3% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -165px !important;
+}
+.wrapper {
+        top: 23% !important;
+        right: 7% !important;
+      }
+      .wrapper .navbar {
+        width: 112px !important;
+        padding: 5px 5px !important;
+      }
+      nav ul {
+        position: relative !important;
+        left: -12% !important;
+      }
+  .wrapper1{
+    top:55% !important;
+    left: 73% !important;
+    width: 378px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 17rem !important;
+  }
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+    nav ul{
+        margin-left: -4rem;
+    }
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        display: none;
+        width: 33rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 226px !important;
+        margin: 14px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 32.5rem;
+      }
+      .search-box input {
+        width: 65% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+}
+    @media screen and (min-width:322px) and (max-width:409px) {
+      .feature {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 69vh !important;
+
+      }
+      .features-container .wave {
+        top: 87% !important;
+        bottom: 0% !important;
+    }
+    .feature .container{
+      margin-bottom: 62px !important;
+      margin-top: 0px !important;
+    }
+      .feature h1 {
+        margin: 3rem auto !important;
+        font-size: 7em !important;
+        padding-bottom: 0px !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      .feature .container .card {
+        width: 323px !important;
+        height: 126px !important;
+        margin: 2rem 0rem !important;
+      }
+      .feature .container .card .pic {
+        width: 288px !important;
+        height: 169px !important;
+      }
+      .feature .container .card button {
+        right: 2px !important;
+        bottom: 2px !important;
+        width: 25px !important;
+        height: 25px !important;
+      }
+      .feature .container .card h2 {
+        right: 38px !important;
+        font-size: 30px !important;
+      }
+      .feature .container .card2 h2 {
+        right: 37px !important;
+        font-size: 30px !important;
+      }
+      .feature .container .card p {
+        top: 8px !important;
+        right: 5px !important;
+      }
+      .feature .container .card .fa-arrow-right {
+        right: 5px !important;
+        bottom: 2px !important;
+        font-size: 26px !important;
+      }
+      .feature h1 span:nth-child(2):before {
+        top: 3px !important;
+      }
+      .feature h1 span:nth-child(1):before {
+        top: 3px !important;
+      }
+      nav{
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .wrapper {
+        top: 23% !important;
+        right: 7% !important;
+      }
+      .wrapper .navbar {
+        padding: 5px 5px !important;
+      }
+      nav ul {
+        position: relative !important;
+        left: -30% !important;
+      }
+      .logoimg img {
+        width: 130px;
+        height: 90px !important;
+        margin-left: -192px !important;
+    }
+      .wrapper1{
+
+        top:15% !important;
+        left: 70% !important;
+        width: 378px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        margin-top: 40rem !important;
+      }
+      .wrapper1 .right{
+        width: 80% !important;
+      }
+      .right p{
+        font-size: 1.5rem !important;
+      }
+      .wrapper1 .left{
+        width: 80% !important;
+      }
+      .wrapper1 i{
+        position: absolute !important;
+        top: 0% !important;
+        right: 22% !important;
+      }
+
+      .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        display: none;
+        width: 36rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 254px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 35rem;
+      }
+      .search-box input {
+        width: 70% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:410px) and (max-width:539px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 70vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 323px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 288px !important;
+    height: 169px !important;
+  }
+  .feature .container .card button {
+    right: 2px !important;
+    bottom: 2px !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .feature .container .card h2 {
+    right: 38px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 37px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 5px !important;
+    bottom: 2px !important;
+    font-size: 26px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .wrapper .navbar {
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -205px !important;
+}
+  .wrapper1{
+    top:15% !important;
+    left: 68.5% !important;
+    width: 378px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 40rem !important;
+  }
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+      /* display: none; */
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 292px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:540px) and (max-width:600px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 84vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 323px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 288px !important;
+    height: 169px !important;
+  }
+  .feature .container .card button {
+    right: 2px !important;
+    bottom: 2px !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .feature .container .card h2 {
+    right: 38px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 37px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 5px !important;
+    bottom: 2px !important;
+    font-size: 26px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -266px !important;
+}
+.let1{
+  margin-left: 13rem !important;
+    margin-top: -2rem !important;
+    padding: 4rem !important;
+}
+.wrapper1{
+  top:15% !important;
+  left: 68.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+
+
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 54rem;
+        height: 32rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 53rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 385px !important;
+        margin: 7px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:601px) and (max-width:770px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 70vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -380px !important;
+}
+.wrapper1{
+  top: 10% !important;
+  left: 51.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+
+  .wrapper1 .right{
+    width: 100% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 100% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 1% !important;
+  }
+  .let1 {
+    width: 57%;
+    font-size: 2rem;
+    font-family: "Lobster", sans-serif;
+    font-weight: lighter;
+    margin: 1rem 1rem 2rem 33rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: -webkit-left;
+  }
+  .d-text h3 {
+    font-size: 4.2rem;
+    width: 32rem !important;
+  }
+
+    .border{
+        display: flex;
+        /* flex-wrap: wrap; */
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+      margin-top: -5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: -74px;
+  }
+    .d-text p {
+        font-size: 2.3rem;
+        width: fit-content;
+        margin: 2.3rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 80%;
+      }
+      .f1 {
+        display: block;
+        width: 72%;
+      }
+
+      .selected{
+        width: 358px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:771px) and (max-width:1150px){
+  .feature {
+    min-height: 46vh !important;
+
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -32% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -510px !important;
+}
+.wrapper1{
+  top: 10% !important;
+  left: 51.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+
+  .wrapper1 .right{
+    width: 100% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 100% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 1% !important;
+  }
+  .let1 {
+    width: 57%;
+    font-size: 2rem;
+    font-family: "Lobster", sans-serif;
+    font-weight: lighter;
+    margin: 1rem 1rem 2rem 33rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: -webkit-left;
+  }
+  .d-text h3 {
+    font-size: 4.2rem;
+    width: 32rem !important;
+  }
+
+    .border{
+        display: flex;
+        /* flex-wrap: wrap; */
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: -14px;
+  }
+    .d-text p {
+        font-size: 2.3rem;
+        width: fit-content;
+        margin: 2.3rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 80%;
+      }
+      .f1 {
+        display: block;
+        width: 72%;
+      }
+
+      .selected{
+        width: 358px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+*{
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+.no {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-size: 46px;
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, .7), 5px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.border {
+    height: auto;
+    margin: auto;
+    margin-top: 5rem;
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+.autorotate {
+    width: 96.5%;
+    display: block;
+    padding: 5px;
+    background-color: tomato;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.not {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+@media screen and (max-width:321px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 84vh !important;
+  }
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 255px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 233px !important;
+    height: 126px !important;
+  }
+  .feature .container .card button {
+    right: 1px !important;
+    bottom: 1px !important;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .feature .container .card h2 {
+    right: 36px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 26px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 2px !important;
+    bottom: 2px !important;
+    font-size: 18px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 3% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -165px !important;
+}
+.wrapper {
+        top: 23% !important;
+        right: 7% !important;
+      }
+      .wrapper .navbar {
+        width: 112px !important;
+        padding: 5px 5px !important;
+      }
+      nav ul {
+        position: relative !important;
+        left: -12% !important;
+      }
+  .wrapper1{
+    top:55% !important;
+    left: 73% !important;
+    width: 378px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 17rem !important;
+  }
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+    nav ul{
+        margin-left: -4rem;
+    }
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        display: none;
+        width: 33rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 226px !important;
+        margin: 14px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 32.5rem;
+      }
+      .search-box input {
+        width: 65% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+}
+    @media screen and (min-width:322px) and (max-width:409px) {
+      .feature {
+        display: flex !important;
+        flex-direction: column !important;
+        min-height: 69vh !important;
+
+      }
+      .features-container .wave {
+        top: 87% !important;
+        bottom: 0% !important;
+    }
+    .feature .container{
+      margin-bottom: 62px !important;
+      margin-top: 0px !important;
+    }
+      .feature h1 {
+        margin: 3rem auto !important;
+        font-size: 7em !important;
+        padding-bottom: 0px !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+      .feature .container .card {
+        width: 323px !important;
+        height: 126px !important;
+        margin: 2rem 0rem !important;
+      }
+      .feature .container .card .pic {
+        width: 288px !important;
+        height: 169px !important;
+      }
+      .feature .container .card button {
+        right: 2px !important;
+        bottom: 2px !important;
+        width: 25px !important;
+        height: 25px !important;
+      }
+      .feature .container .card h2 {
+        right: 38px !important;
+        font-size: 30px !important;
+      }
+      .feature .container .card2 h2 {
+        right: 37px !important;
+        font-size: 30px !important;
+      }
+      .feature .container .card p {
+        top: 8px !important;
+        right: 5px !important;
+      }
+      .feature .container .card .fa-arrow-right {
+        right: 5px !important;
+        bottom: 2px !important;
+        font-size: 26px !important;
+      }
+      .feature h1 span:nth-child(2):before {
+        top: 3px !important;
+      }
+      .feature h1 span:nth-child(1):before {
+        top: 3px !important;
+      }
+      nav{
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      .wrapper {
+        top: 23% !important;
+        right: 7% !important;
+      }
+      .wrapper .navbar {
+        padding: 5px 5px !important;
+      }
+      nav ul {
+        position: relative !important;
+        left: -30% !important;
+      }
+      .logoimg img {
+        width: 130px;
+        height: 90px !important;
+        margin-left: -192px !important;
+    }
+      .wrapper1{
+
+        top:15% !important;
+        left: 70% !important;
+        width: 378px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        margin-top: 40rem !important;
+      }
+      .wrapper1 .right{
+        width: 80% !important;
+      }
+      .right p{
+        font-size: 1.5rem !important;
+      }
+      .wrapper1 .left{
+        width: 80% !important;
+      }
+      .wrapper1 i{
+        position: absolute !important;
+        top: 0% !important;
+        right: 22% !important;
+      }
+
+      .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        display: none;
+        width: 36rem;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 254px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 35rem;
+      }
+      .search-box input {
+        width: 70% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:410px) and (max-width:539px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 70vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 323px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 288px !important;
+    height: 169px !important;
+  }
+  .feature .container .card button {
+    right: 2px !important;
+    bottom: 2px !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .feature .container .card h2 {
+    right: 38px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 37px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 5px !important;
+    bottom: 2px !important;
+    font-size: 26px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .wrapper .navbar {
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -205px !important;
+}
+  .wrapper1{
+    top:15% !important;
+    left: 68.5% !important;
+    width: 378px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 40rem !important;
+  }
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+      /* display: none; */
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+        color: black;
+      background: black;
+    }
+
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+      display: flex;
+      flex-direction: column;
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .lecica .let{
+        width: 100% !important;
+        margin-top: -5rem !important;
+      }
+      .lecica h2 {
+        font-size: 5rem !important;
+    }
+      .let1{
+        width: 100% !important;
+        margin: 2rem 8rem 4rem 0rem !important;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 292px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:540px) and (max-width:600px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 84vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature .container .card {
+    width: 323px !important;
+    height: 126px !important;
+    margin: 2rem 0rem !important;
+  }
+  .feature .container .card .pic {
+    width: 288px !important;
+    height: 169px !important;
+  }
+  .feature .container .card button {
+    right: 2px !important;
+    bottom: 2px !important;
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .feature .container .card h2 {
+    right: 38px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card2 h2 {
+    right: 37px !important;
+    font-size: 30px !important;
+  }
+  .feature .container .card p {
+    top: 8px !important;
+    right: 5px !important;
+  }
+  .feature .container .card .fa-arrow-right {
+    right: 5px !important;
+    bottom: 2px !important;
+    font-size: 26px !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -266px !important;
+}
+.let1{
+  margin-left: 13rem !important;
+    margin-top: -2rem !important;
+    padding: 4rem !important;
+}
+.wrapper1{
+  top:15% !important;
+  left: 68.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+  .wrapper1 .right{
+    width: 80% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 80% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 22% !important;
+  }
+
+
+    .border{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mycar{
+        width: 54rem;
+        height: 32rem;
+        margin-top: -10rem;
+    }
+    #view360{
+        cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 53rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+        margin-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        margin-left: 0;
+    }
+    .d-text p {
+        font-size: 2.5rem;
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 100%;
+      }
+      .f1 {
+        display: block;
+        width: 90%;
+      }
+
+      .selected{
+        width: 385px !important;
+        margin: 7px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:601px) and (max-width:770px){
+  .feature {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 70vh !important;
+
+  }
+  .features-container .wave {
+    top: 87% !important;
+    bottom: 0% !important;
+}
+.feature .container{
+  margin-bottom: 62px !important;
+  margin-top: 0px !important;
+}
+  .feature h1 {
+    margin: 3rem auto !important;
+    font-size: 7em !important;
+    padding-bottom: 0px !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .feature h1 span:nth-child(2):before {
+    top: 3px !important;
+  }
+  .feature h1 span:nth-child(1):before {
+    top: 3px !important;
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -30% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -380px !important;
+}
+.wrapper1{
+  top: 10% !important;
+  left: 51.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+
+  .wrapper1 .right{
+    width: 100% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 100% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 1% !important;
+  }
+  .let1 {
+    width: 57%;
+    font-size: 2rem;
+    font-family: "Lobster", sans-serif;
+    font-weight: lighter;
+    margin: 1rem 1rem 2rem 33rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: -webkit-left;
+  }
+  .d-text h3 {
+    font-size: 4.2rem;
+    width: 32rem !important;
+  }
+
+    .border{
+        display: flex;
+        /* flex-wrap: wrap; */
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+      margin-top: -5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: -74px;
+  }
+    .d-text p {
+        font-size: 2.3rem;
+        width: fit-content;
+        margin: 2.3rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 80%;
+      }
+      .f1 {
+        display: block;
+        width: 72%;
+      }
+
+      .selected{
+        width: 358px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
+@media screen and (min-width:771px) and (max-width:1150px){
+  .feature {
+    min-height: 46vh !important;
+
+  }
+  nav{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .wrapper .navbar {
+    width: 105px !important;
+    padding: 5px 5px !important;
+  }
+  nav ul {
+    position: relative !important;
+    left: -32% !important;
+  }
+  .wrapper {
+    top: 23% !important;
+    right: 7% !important;
+  }
+  .logoimg img {
+    width: 130px;
+    height: 90px !important;
+    margin-left: -510px !important;
+}
+.wrapper1{
+  top: 10% !important;
+  left: 51.5% !important;
+  width: 378px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  margin-top: 40rem !important;
+}
+
+  .wrapper1 .right{
+    width: 100% !important;
+  }
+  .right p{
+    font-size: 1.5rem !important;
+  }
+  .wrapper1 .left{
+    width: 100% !important;
+  }
+  .wrapper1 i{
+    position: absolute !important;
+    top: 0% !important;
+    right: 1% !important;
+  }
+  .let1 {
+    width: 57%;
+    font-size: 2rem;
+    font-family: "Lobster", sans-serif;
+    font-weight: lighter;
+    margin: 1rem 1rem 2rem 33rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: -webkit-left;
+  }
+  .d-text h3 {
+    font-size: 4.2rem;
+    width: 32rem !important;
+  }
+
+    .border{
+        display: flex;
+        /* flex-wrap: wrap; */
+    }
+    #mycar{
+        width: 38rem;
+        height: 29rem;
+        margin-top: -10rem;
+    }
+    #view360{
+    cursor: e-resize;
+    width: auto;
+    height: 176px !important;
+    position: relative;
+    }
+
+    #view360 .autorotate{
+        width: 42rem !important;
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
+    .d-text {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: -14px;
+  }
+    .d-text p {
+        font-size: 2.3rem;
+        width: fit-content;
+        margin: 2.3rem 0;
+    }
+
+    .cars .lecica{
+        font-size: 8rem;
+        font-family: "Lobster", sans-serif;
+        font-weight: lighter;
+        margin: -9rem 0 2rem 0;
+      }
+      .m2 {
+        width: 80%;
+      }
+      .f1 {
+        display: block;
+        width: 72%;
+      }
+
+      .selected{
+        width: 358px !important;
+        margin: 20px !important;
+        padding: 10px 12px !important;
+      }
+      .select-box .options-container.active {
+        width: 40rem;
+      }
+      .search-box input {
+        width: 80% !important;
+      }
+      .main-text {
+        margin: 10px 0 14px -90px !important;
+    }
+
+}
+
